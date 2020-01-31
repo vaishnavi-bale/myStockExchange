@@ -1,0 +1,12 @@
+<h2 class="display-3 text-center my-3">Upload Excel</h2>
+<div class="container text-center">
+    <form [formGroup]="uploadFile" class="custom-file w-50">
+        <div class="formGroup">
+            <input type="file" formControlName="file" class="formControl custom-file-input ">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <div class="float-right mt-2">
+            <button type="Upload" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+</div>

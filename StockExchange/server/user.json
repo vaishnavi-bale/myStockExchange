@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": "101",
+      "fullName": "vaishnavi b",
+      "email": "vaishnavi@gmail.com",
+      "phoneNumber": 6816216546,
+      "userName": "vaishu",
+      "password": "vaish5"
+    },
+    {
+      "id": 102,
+      "fullName": "vidya",
+      "email": "vidya@gmail.com",
+      "phoneNumber": 58565464,
+      "userName": "sriiii",
+      "password": "nkjnkl"
+    },
+    {
+      "id": 103,
+      "fullName": "basani",
+      "email": "nn@gmail.com",
+      "phoneNumber": 656315653,
+      "userName": "uma",
+      "password": "joijo"
+    },
+    {
+      "id": 104,
+      "fullName": "vishnu",
+      "email": "vish@gmail.com",
+      "phoneNumber": 465354651,
+      "userName": "vish",
+      "password": "kolimim"
+    }
+  ]
+}

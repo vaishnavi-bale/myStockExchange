@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="container w-25 float-left col-3 mt-5">
+       <div class="list-group text-center">
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
+                <h3>Users Data</h3>
+            </a>
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
+                <h3>Import Data</h3>
+            </a>
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company']">
+                <h3>Add New Company</h3>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action text-primary">
+                <h3>Manage Exchange</h3>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action text-primary">
+                <h3>Update IPO Details</h3>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
+                <h3>Log Out</h3>
+            </a>
+        </div>
+    </div>
+  <div class="container"> 
+<table class="table w-35 table-border mt-5">
+    <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.fullName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.password}}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button></td>
+        <td><button class="btn btn-success" (click)="updateUser(user)"> Update</button></td> 
+    </tr>
+</table>
+</div>
+</div> 
