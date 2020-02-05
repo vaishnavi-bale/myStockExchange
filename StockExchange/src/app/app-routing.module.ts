@@ -9,6 +9,8 @@ import { MainComponent } from './admin/main/main.component';
 import { ImportDataComponent } from './admin/import-data/import-data.component';
 import { CompanyComponent } from './admin/company/company.component';
 import { UpdateComponent } from './update/update.component';
+import { ManageExchangeComponent } from './admin/manage-exchange/manage-exchange.component';
+import { IpoDetailsComponent } from './admin/ipo-details/ipo-details.component';
 
 const routes: Routes = [
 { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -20,6 +22,8 @@ const routes: Routes = [
 {path : 'import-data',component:ImportDataComponent},
 {path: 'company',component:CompanyComponent},
 { path :'update',component:UpdateComponent},
+{ path:'manage-exchange',component:ManageExchangeComponent},
+{ path:'ipo-details',component:IpoDetailsComponent},
 { path: ' ',component:AppComponent}
 ];
 

@@ -13,7 +13,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateComponent } from './update/update.component';
-import { CompanylistComponent } from './company/companylist/companylist.component'
+import { CompanylistComponent } from './company/companylist/companylist.component';
+import { ManageExchangeComponent } from './admin/manage-exchange/manage-exchange.component';
+import { IpoDetailsComponent } from './admin/ipo-details/ipo-details.component';
+import { UserMainComponent } from './user-main/user-main.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CompanylistComponent } from './company/companylist/companylist.componen
     UserComponent,
     HomeComponent,
     UpdateComponent,
-    CompanylistComponent
+    CompanylistComponent,
+    ManageExchangeComponent,
+    IpoDetailsComponent,
+    UserMainComponent
   ],
   imports: [
     BrowserModule,

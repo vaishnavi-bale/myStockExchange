@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-5">
+           <div class="list-group text-center">
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
+                    <h5>Users Data</h5>
+                </a>
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
+                    <h5>Import Data</h5>
+                </a>
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company']">
+                    <h5>Add New Company</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/manage-exchange']">
+                    <h5>Manage Exchange</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
+                    <h5>Update IPO Details</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
+                    <h5>Log Out</h5>
+                </a>
+            </div>
+        </div>
+
+<div class="col-7" >
+
+    <h1 class="text-primary text-center text-white">IPO Details</h1>
+
+    <form [formGroup]="ipoDetails" (ngSubmit)="ipoDetails()">
+        <div class="form-group">
+            <label for="companyName" class="text-primary h5">Company Name: </label>
+            <input type="text" class="form-control border-primary" placeholder="Company Name" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="stockExchange" class="text-primary h5">Stock Exchange: </label>
+            <input type="text" class="form-control border-primary" placeholder="Stock Exchange" formControlName="stckExchange">
+        </div>
+        <div class="form-group">
+            <label for="pricePerShare" class="text-primary h5">Price Per Share: </label>
+            <input type="number" class="form-control border-primary" formControlName="pricePerShare"
+                placeholder="Price Per Share In Rupees">
+        </div>
+        <div class="form-group">
+            <h5><label for="noOfShares" class="text-primary">Number of Shares: </label></h5>
+            <input type="number" class="form-control border-primary" formControlName="noOfShares"
+                placeholder="Total Number of Shares">
+        </div>
+        <div>
+        <label for="dateTime" class="text-primary h5">Open Data-Time:</label>
+        <input type="date" class="form-control border-primary" placeholder="DD-MM-YYYY" formControlName="dateTime">
+        </div>
+        <div>
+        <label for="remarks" class="text-primary h5">Remarks:</label>
+        <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange" rows="3" formControlName="remarks"></textarea>
+    </div>
+        <button class="btn btn-primary text-white text-center form-control" [disabled]="!stockExchange.valid">Add Stock Exchange</button>
+    </form>
+</div>
+</div>
+</div>
+
