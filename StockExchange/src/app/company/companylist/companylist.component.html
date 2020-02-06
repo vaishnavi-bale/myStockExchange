@@ -1,6 +1,7 @@
-<h1>List Of Companies</h1>
-<table>
+<h1 class="text-primary text-center mt-5">List Of Companies</h1>
+<table class="table mt-5">
     <tr>
+        <th>ID Number</th>
         <th>Company Name</th>
         <th>CEO Name</th>
         <th>Board Members</th>
@@ -8,12 +9,15 @@
         <th>Brief Description</th>
         <th>IPO Date</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr *ngFor="let company of company">
+        <td>{{company.id}}</td>
+        <td>{{company.companyName}}</td>
+        <td>{{company.ceoName}}</td>
+        <td>{{company.boardMember}}</td>
+        <td>{{company.turnOver}}</td>
+        <td>{{company.briefDescription}}</td>
+        <td>{{company.ipoDate}}</td>
+        <td><button class="btn btn-danger" (click)="deleteCompany(company)"> Delete</button></td>
+        <td><button class="btn btn-success" (click)="updateCompany(company)"> Update</button></td>
     </tr>
 </table>

@@ -11,6 +11,9 @@ import { CompanyComponent } from './admin/company/company.component';
 import { UpdateComponent } from './update/update.component';
 import { ManageExchangeComponent } from './admin/manage-exchange/manage-exchange.component';
 import { IpoDetailsComponent } from './admin/ipo-details/ipo-details.component';
+import { UserMainComponent } from './user-main/user-main.component';
+import { CompanylistComponent } from './company/companylist/companylist.component';
+import { UpdateCompanyComponent } from './admin/update-company/update-company.component';
 
 const routes: Routes = [
 { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -24,6 +27,9 @@ const routes: Routes = [
 { path :'update',component:UpdateComponent},
 { path:'manage-exchange',component:ManageExchangeComponent},
 { path:'ipo-details',component:IpoDetailsComponent},
+{path: 'user-main',component:UserMainComponent},
+{path: 'company-list',component:CompanylistComponent},
+{path: 'update-company',component:UpdateCompanyComponent},
 { path: ' ',component:AppComponent}
 ];
 

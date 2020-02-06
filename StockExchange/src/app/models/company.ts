@@ -1,8 +1,9 @@
 export class Company{
+    id:number;
     companyName: string;
     ceoName: string;
     boardMember: string;
     turnOver: number;
-    password: string;
- 
+    briefDescription: string;
+    ipoDate:Date;
 }

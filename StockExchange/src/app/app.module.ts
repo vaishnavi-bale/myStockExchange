@@ -16,7 +16,8 @@ import { UpdateComponent } from './update/update.component';
 import { CompanylistComponent } from './company/companylist/companylist.component';
 import { ManageExchangeComponent } from './admin/manage-exchange/manage-exchange.component';
 import { IpoDetailsComponent } from './admin/ipo-details/ipo-details.component';
-import { UserMainComponent } from './user-main/user-main.component'
+import { UserMainComponent } from './user-main/user-main.component';
+import { UpdateCompanyComponent } from './admin/update-company/update-company.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserMainComponent } from './user-main/user-main.component'
     CompanylistComponent,
     ManageExchangeComponent,
     IpoDetailsComponent,
-    UserMainComponent
+    UserMainComponent,
+    UpdateCompanyComponent
   ],
   imports: [
     BrowserModule,

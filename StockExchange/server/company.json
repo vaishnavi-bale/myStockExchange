@@ -1,0 +1,13 @@
+{
+  "company": [
+    {
+      "id": 200,
+      "companyName": "microsoft",
+      "ceoName": "xyz",
+      "boardMember": "pqr",
+      "turnOver": "54653",
+      "briefDescription": "it is a software product based company",
+      "ipoDate": "12/02/1998"
+    }
+  ]
+}

@@ -27,10 +27,10 @@
 
     <h1 class="text-primary text-center text-white">Create New Company</h1>
 
-    <form action="" [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+    <form action="" [formGroup]="updateCompany" >
         <div class="form-group">
             <h5><label for="id" class="text-primary">Company Code: </label></h5>
-            <input type="number" id="id" class="form-control border-primary" formControlName="idNumber"
+            <input type="number" id="id" class="form-control border-primary" formControlName="id"
                 placeholder="ID Number">
         </div>
         <div class="form-group">
@@ -64,7 +64,7 @@
                 placeholder="IPO Date">
         </div>
 
-        <button type="submit" class="btn btn-primary" (click)="addCompanyMethod()" [disabled]="!companyForm.valid">Save</button>
+        <button type="submit" class="btn btn-primary" (click)="updateTheCompany()" [disabled]="!updateCompany.valid">Save</button>
     </form>
 </div>
 </div>
