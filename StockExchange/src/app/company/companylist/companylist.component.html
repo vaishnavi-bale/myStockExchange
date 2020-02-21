@@ -1,5 +1,25 @@
-<h1 class="text-primary text-center mt-5">List Of Companies</h1>
-<table class="table mt-5">
+<div class="row">
+    <div class="container w-25 col-3 mt-5">
+       <div class="list-group text-center">
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
+                <h3>Company List</h3>
+            </a>
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/']">
+                <h3>IPO List</h3>
+            </a>
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/']">
+                <h3>Compare Company</h3>
+            </a>
+            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
+                <h3>Log Out</h3>
+            </a>
+        </div>
+    </div>
+   
+<div class="col-9 mt-5">
+ 
+<h1 class="text-primary text-center">List Of Companies</h1>
+<table class="table">
     <tr>
         <th>ID Number</th>
         <th>Company Name</th>
@@ -21,3 +41,5 @@
         <td><button class="btn btn-success" (click)="updateCompany(company)"> Update</button></td>
     </tr>
 </table>
+</div>
+</div>

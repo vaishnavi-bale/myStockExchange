@@ -1,4 +1,4 @@
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-3 mt-5">
            <div class="list-group text-center">
@@ -15,15 +15,15 @@
                     <h5>Manage Exchange</h5>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
-                    <h5>Update IPO Details</h5>
+                    <h5>Add IPO Details</h5>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
                     <h5>Log Out</h5>
                 </a>
             </div>
         </div>
-
-<div class="col-7" >
+        <div class="col-1"></div>
+<div class="col-7 mt-4 p-4 shadow bg-white rounded">
 
     <h1 class="text-primary text-center text-white">Stock Exchange</h1>
 
@@ -44,7 +44,7 @@
         <label for="remarks" class="text-primary h5">Remarks:</label>
         <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange" rows="3" formControlName="remarks"></textarea>
     </div>
-        <button class="btn btn-primary text-white text-center form-control" [disabled]="!stockExchange.valid">Add Stock Exchange</button>
+        <button class="btn btn-primary text-white text-center" [disabled]="!stockExchange.valid">Add Stock Exchange</button>
     </form>
 </div>
 </div>
