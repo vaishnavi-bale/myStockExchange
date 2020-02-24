@@ -8,7 +8,7 @@
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
                     <h5>Import Data</h5>
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company']">
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
                     <h5>Add New Company</h5>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/manage-exchange']">
@@ -23,21 +23,23 @@
             </div>
         </div>
 
-<div class="col-9" >
-
+        <div class="col-1"></div>
+        <div class="col-7 mt-4 p-3 shadow bg-white rounded">
     <h1 class="text-primary text-center text-white">Create New Company</h1>
 
     <form action="" [formGroup]="updateCompany" >
-        <div class="form-group">
-            <h5><label for="id" class="text-primary">Company Code: </label></h5>
+       <div class="row">
+        <div class="form-group col">
+          <label for="id" class="text-primary h5">Company Code: </label>
             <input type="number" id="id" class="form-control border-primary" formControlName="id"
                 placeholder="ID Number">
         </div>
-        <div class="form-group">
+        <div class="form-group col">
             <label for="companyName" class="text-primary h5">Company Name : </label>
             <input type="text" id="company_name" class="form-control border-primary" formControlName="companyName"
                 placeholder="Company Name">
         </div>
+       </div>
         <div class="form-group">
             <label for="ceoName" class="text-primary h5">CEO Name : </label>
             <input type="text" id="ceo_name" class="form-control border-primary" formControlName="ceoName"

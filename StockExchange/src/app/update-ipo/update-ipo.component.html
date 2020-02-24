@@ -27,7 +27,7 @@
 
     <h1 class="text-primary text-center text-white">IPO Details</h1>
 
-    <form [formGroup]="ipoDetails">
+    <form [formGroup]="updateipo" (ngSubmit)="ipoDetails()">
       <div class="row">
         <div class="form-group col">
             <label for="companyName" class="text-primary h5">Company Name: </label>
@@ -56,9 +56,10 @@
         <label for="remarks" class="text-primary h5">Remarks:</label>
         <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange" rows="3" formControlName="remarks"></textarea>
     </div>
-        <button class="btn btn-primary text-white text-center" (click)="AddIpo()" [disabled]="!ipoDetails.valid">Add IPO Details</button>
+        <button class="btn btn-primary text-white text-center" (click)="UpdateTheIpo()" [disabled]="!updateipo.valid">Update IPO Details</button>
     </form>
 </div>
 </div>
 </div>
+
 

@@ -1,13 +1,14 @@
 {
   "company": [
     {
-      "id": 200,
-      "companyName": "microsoft c",
-      "ceoName": "xyz",
-      "boardMember": "pqr",
-      "turnOver": "54653",
-      "briefDescription": "it is a software product based company",
-      "ipoDate": "12/02/1998"
+      "idNumber": 151,
+      "companyName": "apple",
+      "ceoName": "abc",
+      "boardMember": "sf",
+      "turnOver": 44545,
+      "briefDescription": "nlkmnjkij",
+      "ipoDate": "1330-05-03",
+      "id": 1
     }
   ]
 }

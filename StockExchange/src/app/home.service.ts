@@ -7,7 +7,7 @@ import { User } from './models/user';
   providedIn: 'root'
 })
 export class HomeService {
-  httpUrl='http://localhost:3000/user/';
+  httpUrl='http://localhost:8002/user/';
   constructor(private httpClient:HttpClient) { }
   getAllUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(this.httpUrl);
@@ -19,7 +19,7 @@ export class HomeService {
     return this.httpClient.delete<User>(this.httpUrl + '/' + id);
   }
   updateUser(user: User):Observable<User>{
-    return this.httpClient.put<User>(this.httpUrl +user.id ,user);
+    return this.httpClient.put<User>(this.httpUrl,user);
     }
     getUserById(id: number):Observable<User>{
       return this.httpClient.get<User>(this.httpUrl+id);

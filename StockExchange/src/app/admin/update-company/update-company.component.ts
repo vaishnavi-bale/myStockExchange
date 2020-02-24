@@ -23,9 +23,9 @@ export class UpdateCompanyComponent implements OnInit {
       briefDescription:['',Validators.required],
       ipoDate:['',Validators.required]
     });
-  const idNumber = localStorage.getItem('companyId');
-    if (+ idNumber > 0) {
-      this.companyService.getCompanyById(+idNumber).subscribe(company => {
+  const id = localStorage.getItem('companyId');
+    if (+ id > 0) {
+      this.companyService.getCompanyById(+id).subscribe(company => {
         this.updateCompany.patchValue(company);
       })
     }

@@ -7,7 +7,7 @@ import { Company } from '../models/company';
   providedIn: 'root'
 })
 export class CompanyService {
-  httpUrl='http://localhost:8888/company/';
+  httpUrl='http://localhost:8002/company/';
   constructor(private httpClient:HttpClient) { }
   getAllCompany(): Observable<Company[]>{
     return this.httpClient.get<Company[]>(this.httpUrl);
@@ -15,13 +15,13 @@ export class CompanyService {
   saveCompany(company: Company): Observable<Company>{
     return this.httpClient.post<Company>(this.httpUrl , company);
   }
-  deleteCompany(idNumber: number): Observable<Company> {
-    return this.httpClient.delete<Company>(this.httpUrl + idNumber);
+  deleteCompany(id: number): Observable<Company> {
+    return this.httpClient.delete<Company>(this.httpUrl + id);
   }
   updateCompany(company: Company):Observable<Company>{
-    return this.httpClient.put<Company>(this.httpUrl + company.id ,company);
+    return this.httpClient.put<Company>(this.httpUrl,company);
     }
-    getCompanyById(idNumber: number):Observable<Company>{
-      return this.httpClient.get<Company>(this.httpUrl+idNumber);
+    getCompanyById(id: number):Observable<Company>{
+      return this.httpClient.get<Company>(this.httpUrl+id);
     }
 }

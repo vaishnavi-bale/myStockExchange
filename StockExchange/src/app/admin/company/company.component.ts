@@ -13,7 +13,7 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
     this.companyForm=this.formBuilder.group({
-      idNumber: ['',Validators.required],
+      id: ['',Validators.required],
       companyName: ['',Validators.required],
       ceoName:['',Validators.required],
       boardMember:['',Validators.required],
