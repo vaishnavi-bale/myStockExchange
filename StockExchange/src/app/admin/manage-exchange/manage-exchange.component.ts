@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StockExchangeService } from 'src/app/services/stock-exchange.service';
 
 @Component({
   selector: 'app-manage-exchange',
@@ -9,22 +10,22 @@ import { Router } from '@angular/router';
 })
 export class ManageExchangeComponent implements OnInit {
   stockExchange:FormGroup;
-  constructor(private formBuilder:FormBuilder,private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private router:Router,private stockExchangeService:StockExchangeService) { }
  
   ngOnInit() {
     this.stockExchange=this.formBuilder.group({
-      id:[],
       name:['',Validators.required],
-      brief:[''],
+      brief:['',Validators.required],
       address:['',Validators.required],
-      remarks:['']
+      remarks:['',Validators.required]
     });
   }
-  // stockExchanges(){
-  //   this.stockEService.saveStockExchange(this.stockExchange.value).subscribe(data=>{
-  //     alert('Stock Exchange Inserted Successfully.');
-  //     this.router.navigate(['/manage-stock-exchange']);
-  //   });
-  // }
-
-}
+   addStocks(){
+    this.stockExchangeService.saveStockExchange(this.stockExchange.value).subscribe(data=>{
+       alert('Stock Exchange Inserted Successfully.');
+       })
+      }
+  back(){
+    this.router.navigate(['main'])
+  }
+    }     

@@ -2,4 +2,30 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 main{
     height: 120vh;
+    /* background:url("./assets/images1/background1.png") no-repeat; */
+}
+body {
+    background-image: url("./assets/images1/bg1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+  }
+  .footer-copyright{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: whitesmoke;
+   color:black;
+   text-align: center;
+  }
+  .navbar{
+      background-color: whitesmoke;
+  }
+.nav-link{
+    color: black;
 }

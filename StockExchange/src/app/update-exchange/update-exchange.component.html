@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-5">
+            <div class="list-group text-center">
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
+                    <h5>Users Data</h5>
+                </a>
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
+                    <h5>Import Data</h5>
+                </a>
+                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
+                    <h5>Add New Company</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary"
+                    [routerLink]="['/manage-exchange']">
+                    <h5>Manage Exchange</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
+                    <h5>Add IPO Details</h5>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
+                    <h5>Log Out</h5>
+                </a>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-7 mt-4 p-4 shadow bg-white rounded">
+
+            <h1 class="text-primary text-center text-white">Stock Exchange</h1>
+
+            <form [formGroup]="updateStockExchange">
+                <div class="form-group">
+                    <label for="exchangId" class="text-primary h5">Id: </label>
+                    <input type="number" class="form-control border-primary" formControlName="id">
+                </div>
+                <div class="form-group">
+                    <label for="exchangName" class="text-primary h5">Stock Exchange Name: </label>
+                    <input type="text" class="form-control border-primary" placeholder="Name of Stock Exchange"
+                        formControlName="name">
+                </div>
+                <div>
+                    <label for="brief" class="text-primary h5">Brief:</label>
+                    <textarea class="form-control border-primary" placeholder="Brief About Stock Exchange" rows="3"
+                        formControlName="brief"></textarea>
+                </div>
+                <div>
+                    <label for="contactAddress" class="text-primary h5">Contact Address:</label>
+                    <input type="text" class="form-control border-primary"
+                        placeholder="Contact Address of Stock Exchange" formControlName="address">
+                </div>
+                <div>
+                    <label for="remarks" class="text-primary h5">Remarks:</label>
+                    <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange"
+                        rows="3" formControlName="remarks"></textarea>
+                </div>
+                <button class="btn btn-primary text-white text-center" (click)="updateStocks()"
+                    [disabled]="!updateStockExchange.valid">Update Stock Exchange</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 mt-5">
-           <div class="list-group text-center">
+            <div class="list-group text-center">
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
                     <h5>Users Data</h5>
                 </a>
@@ -11,7 +11,8 @@
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
                     <h5>Add New Company</h5>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/manage-exchange']">
+                <a href="#" class="list-group-item list-group-item-action text-primary"
+                    [routerLink]="['/manage-exchange']">
                     <h5>Manage Exchange</h5>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
@@ -25,49 +26,50 @@
 
         <div class="col-1"></div>
         <div class="col-7 mt-4 p-3 shadow bg-white rounded">
-    <h1 class="text-primary text-center text-white">Create New Company</h1>
+            <h1 class="text-primary text-center text-white">Create New Company</h1>
 
-    <form action="" [formGroup]="updateCompany" >
-       <div class="row">
-        <div class="form-group col">
-          <label for="id" class="text-primary h5">Company Code: </label>
-            <input type="number" id="id" class="form-control border-primary" formControlName="id"
-                placeholder="ID Number">
-        </div>
-        <div class="form-group col">
-            <label for="companyName" class="text-primary h5">Company Name : </label>
-            <input type="text" id="company_name" class="form-control border-primary" formControlName="companyName"
-                placeholder="Company Name">
-        </div>
-       </div>
-        <div class="form-group">
-            <label for="ceoName" class="text-primary h5">CEO Name : </label>
-            <input type="text" id="ceo_name" class="form-control border-primary" formControlName="ceoName"
-                placeholder="CEO Name">
-        </div>
-        <div class="form-group">
-            <label for="board_mem" class="text-primary h5">Board Members : </label>
-            <input type="text" id="board_mem" class="form-control border-primary" formControlName="boardMember"
-                placeholder="Board Members">
-        </div>
-        <div class="form-group">
-            <label for="turnOver" class="text-primary h5">TurnOver: </label>
-            <input type="number" id="turnOver" class="form-control border-primary" formControlName="turnOver"
-                placeholder="Turn Over">
-        </div>
-        <div class="form-group">
-            <label for="description" class="text-primary h5">Brief Description : </label>
-            <input type="textarea" class="form-control border-primary" id="desp" formControlName="briefDescription"
-                placeholder="Brief Description">
-        </div>
-        <div class="form-group">
-            <label for="ipo_date" class="text-primary h5">IPO Date : </label>
-            <input type="date" id="ipo_date" class="form-control border-primary" formControlName="ipoDate"
-                placeholder="IPO Date">
-        </div>
+            <form action="" [formGroup]="updateCompany">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="id" class="text-primary h5">Company Code: </label>
+                        <input type="number" id="id" class="form-control border-primary" formControlName="id"
+                            placeholder="ID Number">
+                    </div>
+                    <div class="form-group col">
+                        <label for="companyName" class="text-primary h5">Company Name : </label>
+                        <input type="text" id="company_name" class="form-control border-primary"
+                            formControlName="companyName" placeholder="Company Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ceoName" class="text-primary h5">CEO Name : </label>
+                    <input type="text" id="ceo_name" class="form-control border-primary" formControlName="ceoName"
+                        placeholder="CEO Name">
+                </div>
+                <div class="form-group">
+                    <label for="board_mem" class="text-primary h5">Board Members : </label>
+                    <input type="text" id="board_mem" class="form-control border-primary" formControlName="boardMember"
+                        placeholder="Board Members">
+                </div>
+                <div class="form-group">
+                    <label for="turnOver" class="text-primary h5">TurnOver: </label>
+                    <input type="number" id="turnOver" class="form-control border-primary" formControlName="turnOver"
+                        placeholder="Turn Over">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-primary h5">Brief Description : </label>
+                    <input type="textarea" class="form-control border-primary" id="desp"
+                        formControlName="briefDescription" placeholder="Brief Description">
+                </div>
+                <div class="form-group">
+                    <label for="ipo_date" class="text-primary h5">IPO Date : </label>
+                    <input type="date" id="ipo_date" class="form-control border-primary" formControlName="ipoDate"
+                        placeholder="IPO Date">
+                </div>
 
-        <button type="submit" class="btn btn-primary" (click)="updateTheCompany()" [disabled]="!updateCompany.valid">Save</button>
-    </form>
-</div>
-</div>
+                <button type="submit" class="btn btn-primary" (click)="updateTheCompany()"
+                    [disabled]="!updateCompany.valid">Save</button>
+            </form>
+        </div>
+    </div>
 </div>

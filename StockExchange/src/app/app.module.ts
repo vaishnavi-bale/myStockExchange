@@ -21,7 +21,12 @@ import { UpdateCompanyComponent } from './admin/update-company/update-company.co
 import { CompareCompanyComponent } from './compare-company/compare-company.component';
 import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
 import { IpoTableComponent } from './ipo-table/ipo-table.component';
-import { CompareSectorComponent } from './compare-sector/compare-sector.component'
+import { CompareSectorComponent } from './compare-sector/compare-sector.component';
+import { StocklistComponent } from './stocklist/stocklist.component';
+import { UpdateExchangeComponent } from './update-exchange/update-exchange.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +47,12 @@ import { CompareSectorComponent } from './compare-sector/compare-sector.componen
     CompareCompanyComponent,
     UpdateIpoComponent,
     IpoTableComponent,
-    CompareSectorComponent
+    CompareSectorComponent,
+    StocklistComponent,
+    UpdateExchangeComponent,
+    SidebarComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

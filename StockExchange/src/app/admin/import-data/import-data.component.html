@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 mt-5">
-           <div class="list-group text-center">
+            <div class="list-group text-center">
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
                     <h5>Users Data</h5>
                 </a>
@@ -11,10 +11,11 @@
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
                     <h5>Add New Company</h5>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/manage-exchange']">
+                <a href="#" class="list-group-item list-group-item-action text-primary"
+                    [routerLink]="['/manage-exchange']">
                     <h5>Manage Exchange</h5>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
+                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-table']">
                     <h5>Add IPO Details</h5>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
@@ -22,20 +23,20 @@
                 </a>
             </div>
         </div>
-<div class="col-9 mt-5">
-    
-<h2 class="display-3 text-center my-3">Upload Excel</h2>
-<div class="container text-center">
-    <form [formGroup]="uploadFile" class="custom-file w-50">
-        <div class="formGroup">
-            <input type="file" formControlName="file" class="formControl custom-file-input ">
-            <label class="custom-file-label" for="customFile">Choose file</label>
+        <div class="col-9 mt-5">
+
+            <h2 class="display-3 text-center my-3">Upload Excel</h2>
+            <div class="container text-center">
+                <form [formGroup]="uploadFile" class="custom-file w-50">
+                    <div class="formGroup">
+                        <input type="file" formControlName="file" class="formControl custom-file-input ">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <div class="float-right mt-2">
+                        <button type="Upload" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="float-right mt-2">
-            <button type="Upload" class="btn btn-primary">Upload</button>
-        </div>
-    </form>
-</div>
-</div>
-</div>
+    </div>
 </div>

@@ -28,5 +28,8 @@ export class IpoDetailsComponent implements OnInit {
       alert("Ipo Details entered successfully");
     })
   }
+  back(){
+    this.router.navigate(['main'])
+  }
 
 }

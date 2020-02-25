@@ -24,8 +24,10 @@ export class SignupComponent implements OnInit {
 
   }
   addUserMethod(){
+    alert('Registered Successfully')
     this.homeService.saveUser(this.addForm.value).subscribe(data => {
-      console.log('User Inserted Successfully')
+      console.log('User Inserted Successfully');
+      console.log('coming status'+data.registerStatus);
     });
   }
   onSubmit(){

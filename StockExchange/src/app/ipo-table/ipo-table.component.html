@@ -1,6 +1,7 @@
 <div class="row container-fluid">
-    <div class="w-25 col-3 mt-5">
-       <div class="list-group text-center">
+    <div class="col-2"></div>
+    <!-- <div class="w-25 col-3 mt-5"> -->
+        <!-- <div class="list-group text-center">
             <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
                 <h3>Company List</h3>
             </a>
@@ -13,37 +14,41 @@
             <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
                 <h3>Log Out</h3>
             </a>
+        </div> -->
+    <!-- </div> -->
+    <div class="col-9">
+        <table class="table table-striped table-responsive w-35 mt-5">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Company Name</th>
+                    <th>Stock Exchange</th>
+                    <th>Price Per Share</th>
+                    <th>Number of Shares</th>
+                    <th>Open Date</th>
+                    <th>Remarks</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ipo of ipodetails">
+                    <td>{{ipo.id}}</td>
+                    <td>{{ipo.name}}</td>
+                    <td>{{ipo.stckExchange}}</td>
+                    <td>{{ipo.pricePerShare}}</td>
+                    <td>{{ipo.noOfShares}}</td>
+                    <td>{{ipo.dateTime}}</td>
+                    <td>{{ipo.remarks}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteIpo(ipo)"> Delete</button></td>
+                    <td><button class="btn btn-success" (click)="updateIpo(ipo)"> Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <button class="btn btn-primary" [routerLink]="['/ipo-details']">Add IPO</button><br>
+            <br>
+            <button class="btn btn-primary" [routerLink]="['/main']">Back</button>
         </div>
     </div>
-      <div class="col-9"> 
-    <table class="table table-striped table-responsive w-35 mt-5">
-        <thead class="table-light">
-        <tr>
-            <th>ID</th>
-            <th>Company Name</th>
-            <th>Stock Exchange</th>
-            <th>Price Per Share</th>
-            <th>Number of Shares</th>
-            <th>Open Date</th>
-            <th>Remarks</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-        <tbody>
-        <tr *ngFor="let ipo of ipodetails">
-            <td>{{ipo.id}}</td>
-            <td>{{ipo.name}}</td>
-            <td>{{ipo.stckExchange}}</td>
-            <td>{{ipo.pricePerShare}}</td>
-            <td>{{ipo.noOfShares}}</td>
-            <td>{{ipo.dateTime}}</td>
-            <td>{{ipo.remarks}}</td>
-            <td><button class="btn btn-danger" (click)="deleteIpo(ipo)"> Delete</button></td>
-            <td><button class="btn btn-success" (click)="updateIpo(ipo)"> Update</button></td> 
-        </tr>
-    </tbody>
-    </table>
-    </div>
-    </div> 
-    
+<!-- </div> -->

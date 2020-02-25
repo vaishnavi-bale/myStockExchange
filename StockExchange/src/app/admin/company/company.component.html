@@ -1,7 +1,7 @@
 <div class="container-fluid ">
     <div class="row">
         <div class="col-3 mt-5">
-            <div class="list-group text-center">
+            <!-- <div class="list-group text-center">
                 <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
                     <h5>Users Data</h5>
                 </a>
@@ -21,10 +21,9 @@
                 <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
                     <h5>Log Out</h5>
                 </a>
-            </div>
+            </div> -->
         </div>
-<div class="col-1"></div>
-        <div class="col-7 mt-4 p-5 shadow bg-white rounded">
+        <div class="col-6 mt-4 p-5 shadow bg-white rounded">
 
             <h1 class="text-primary text-center">Create New Company</h1>
 
@@ -50,8 +49,8 @@
                     </div>
                     <div class="form-group col">
                         <label for="board_mem" class="text-primary h5">Board Members : </label>
-                        <input type="text" id="board_mem" class="form-control border-primary" formControlName="boardMember"
-                            placeholder="Board Members">
+                        <input type="text" id="board_mem" class="form-control border-primary"
+                            formControlName="boardMember" placeholder="Board Members">
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,6 +71,8 @@
 
                 <button type="submit" class="btn btn-primary" (click)="addCompanyMethod()"
                     [disabled]="!companyForm.valid">Save</button>
+                <button type="submit" class="btn btn-primary float-right" (click)="back()"
+                >Back</button>    
             </form>
         </div>
     </div>

@@ -18,6 +18,10 @@ import { CompareCompanyComponent } from './compare-company/compare-company.compo
 import { UpdateIpoComponent } from './update-ipo/update-ipo.component';
 import { IpoTableComponent } from './ipo-table/ipo-table.component';
 import { CompareSectorComponent } from './compare-sector/compare-sector.component';
+import { UpdateExchangeComponent } from './update-exchange/update-exchange.component';
+import { StocklistComponent } from './stocklist/stocklist.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -38,6 +42,10 @@ const routes: Routes = [
 {path:'update-ipo',component:UpdateIpoComponent},
 {path:'ipo-table',component:IpoTableComponent},
 {path:'compare-sector',component:CompareSectorComponent},
+{path:'update-exchange',component:UpdateExchangeComponent},
+{path:'stock-list',component:StocklistComponent},
+{path:'about-us',component:AboutUsComponent},
+{path:'contact-us',component:ContactUsComponent},
 { path: ' ',component:AppComponent}
 ];
 

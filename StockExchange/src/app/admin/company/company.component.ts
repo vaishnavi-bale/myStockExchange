@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CompanyService } from 'src/app/services/company.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company',
@@ -9,7 +10,7 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyComponent implements OnInit {
   companyForm: FormGroup;
-  constructor(private formBuilder:FormBuilder,private companyService:CompanyService) { }
+  constructor(private formBuilder:FormBuilder,private companyService:CompanyService,private router:Router) { }
 
   ngOnInit() {
     this.companyForm=this.formBuilder.group({
@@ -28,7 +29,7 @@ export class CompanyComponent implements OnInit {
       console.log('Company Inserted Successfully')
     });
   }
-  onSubmit(){
-    console.log(this.companyForm.value);
+  back(){
+    this.router.navigate(['main']);
   }
 }
