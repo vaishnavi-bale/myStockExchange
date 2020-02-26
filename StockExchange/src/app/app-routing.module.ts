@@ -22,6 +22,8 @@ import { UpdateExchangeComponent } from './update-exchange/update-exchange.compo
 import { StocklistComponent } from './stocklist/stocklist.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
+import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -46,6 +48,8 @@ const routes: Routes = [
 {path:'stock-list',component:StocklistComponent},
 {path:'about-us',component:AboutUsComponent},
 {path:'contact-us',component:ContactUsComponent},
+{path:'user-companylist',component:UserCompanylistComponent},
+{path:'user-ipolist',component:UserIpolistComponent},
 { path: ' ',component:AppComponent}
 ];
 

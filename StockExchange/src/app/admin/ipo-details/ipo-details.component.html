@@ -1,71 +1,66 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3"></div>
-        <!-- <div class="col-3 mt-5">
+        <div class="col-3 mt-5">
             <div class="list-group text-center">
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
-                    <h5>Users Data</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/user']">
+                    Users Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
-                    <h5>Import Data</h5>
+                <a class="list-group-item list-group-item-action  h5" [routerLink]="['/import-data']">
+                    Import Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
-                    <h5>Add New Company</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/company-list']">
+                    Manage Company
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary"
-                    [routerLink]="['/manage-exchange']">
-                    <h5>Manage Exchange</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/stock-list']">
+                    Manage Exchange
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
-                    <h5>Add IPO Details</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/ipo-table']">
+                    Manage IPO Details
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
-                    <h5>Log Out</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">
+                    Log Out
                 </a>
             </div>
         </div>
-        <div class="col-1"></div> -->
-        <div class="col-7 mt-4 p-4 shadow bg-white rounded">
-
-            <h1 class="text-primary text-center text-white">IPO Details</h1>
-
+        <div class="col-1"></div>
+        <div class="col-7 mt-4 p-5  shadow bg-white rounded">
+            <div class="text-center">
+                <h3 class="v">IPO Details</h3>
+            </div>
             <form [formGroup]="ipoDetails">
                 <div class="row">
                     <div class="form-group col">
-                        <label for="companyName" class="text-primary h5">Company Name: </label>
-                        <input type="text" class="form-control border-primary" placeholder="Company Name"
-                            formControlName="name">
+                        <label for="companyName" class="h5">Company Name: </label>
+                        <input type="text" class="form-control" placeholder="Company Name" formControlName="name">
                     </div>
                     <div class="form-group col">
-                        <label for="stockExchange" class="text-primary h5">Stock Exchange: </label>
-                        <input type="text" class="form-control border-primary" placeholder="Stock Exchange"
+                        <label for="stockExchange" class="h5">Stock Exchange: </label>
+                        <input type="text" class="form-control" placeholder="Stock Exchange"
                             formControlName="stckExchange">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="pricePerShare" class="text-primary h5">Price Per Share: </label>
-                    <input type="number" class="form-control border-primary" formControlName="pricePerShare"
+                    <label for="pricePerShare" class="h5">Price Per Share: </label>
+                    <input type="number" class="form-control" formControlName="pricePerShare"
                         placeholder="Price Per Share In Rupees">
                 </div>
                 <div class="form-group">
-                    <h5><label for="noOfShares" class="text-primary">Number of Shares: </label></h5>
-                    <input type="number" class="form-control border-primary" formControlName="noOfShares"
+                    <h5><label for="noOfShares" class="h5">Number of Shares: </label></h5>
+                    <input type="number" class="form-control" formControlName="noOfShares"
                         placeholder="Total Number of Shares">
                 </div>
-                <div>
-                    <label for="dateTime" class="text-primary h5">Open Date:</label>
-                    <input type="date" class="form-control border-primary" placeholder="DD-MM-YYYY"
-                        formControlName="dateTime">
+                <div class="form-group">
+                    <label for="dateTime" class="h5">Open Date:</label>
+                    <input type="date" class="form-control" placeholder="DD-MM-YYYY" formControlName="dateTime">
                 </div>
-                <div>
-                    <label for="remarks" class="text-primary h5">Remarks:</label>
-                    <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange"
-                        rows="3" formControlName="remarks"></textarea>
+                <div class="form-group">
+                    <label for="remarks" class="h5">Remarks:</label>
+                    <textarea class="form-control mb-4" placeholder="Remarks About Stock Exchange" rows="3"
+                        formControlName="remarks"></textarea>
                 </div>
-                <button class="btn btn-primary text-white" (click)="AddIpo()"
-                    [disabled]="!ipoDetails.valid">Add IPO Details</button>
-                <button class="btn btn-primary text-white float-right" (click)="back()"
-                    >Back</button>    
+                <button class="btn admin text-white" (click)="AddIpo()" [disabled]="!ipoDetails.valid">Add IPO
+                    Details</button>
+                <button class="btn admin text-white float-right" (click)="back()">Back</button>
             </form>
         </div>
     </div>

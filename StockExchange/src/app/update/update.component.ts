@@ -35,7 +35,9 @@ export class UpdateComponent implements OnInit {
     this.homeService.updateUser(this.updateUser.value).subscribe(u=>{
       this.router.navigate(['user']);
     })
-
+  }
+  back(){
+    this.router.navigate(['main'])
   }
 
   }

@@ -1,0 +1,45 @@
+<div class="row container-fluid">
+     <div class=" w-25 col-3 mt-5">
+        <div class="list-group text-center">
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-companylist']">Company List
+            </a>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-ipolist']">IPO List
+            </a>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/compare-company']">Compare Company
+            </a>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/compare-sector']">Compare Sector
+            </a>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">Log Out
+            </a>
+        </div>
+    </div>
+    <!-- <div class="col-1"></div> -->
+    <div class="col-9 mt-5">
+
+        <h3 class="v text-center">List Of Companies</h3>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th class="h5">ID Number</th>
+                    <th class="h5">Company Name</th>
+                    <th class="h5">CEO Name</th>
+                    <th class="h5">Board Members</th>
+                    <th class="h5">TurnOver</th>
+                    <th class="h5">Brief Description</th>
+                    <th class="h5">IPO Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let company of company">
+                    <td>{{company.id}}</td>
+                    <td>{{company.companyName}}</td>
+                    <td>{{company.ceoName}}</td>
+                    <td>{{company.boardMember}}</td>
+                    <td>{{company.turnOver}}</td>
+                    <td>{{company.briefDescription}}</td>
+                    <td>{{company.ipoDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

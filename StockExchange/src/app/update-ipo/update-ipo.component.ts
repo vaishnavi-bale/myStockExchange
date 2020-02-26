@@ -35,4 +35,7 @@ UpdateTheIpo(ipo: Ipo){
    this.router.navigate(['/ipo-table']);
  })
 }
+back(){
+  this.router.navigate(['main'])
+}
 }

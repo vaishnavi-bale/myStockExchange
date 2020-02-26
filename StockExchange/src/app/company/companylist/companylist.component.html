@@ -1,35 +1,39 @@
-<div class="row container-fluid">
-    <div class="col-2"></div>
-    <!-- <div class=" w-25 col-3 mt-5"> -->
-        <!-- <div class="list-group text-center">
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
-                <h3>Company List</h3>
-            </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-table']">
-                <h3>IPO List</h3>
-            </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/compare-company']">
-                <h3>Compare Company</h3>
-            </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
-                <h3>Log Out</h3>
-            </a>
-        </div> -->
-    <!-- </div> -->
-
-    <div class="col-8 mt-5">
-
-        <h1 class="text-primary text-center">List Of Companies</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 mt-5">
+            <div class="list-group text-center">
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/user']">
+                   Users Data
+                </a>
+                <a class="list-group-item list-group-item-action  h5" [routerLink]="['/import-data']">
+                    Import Data
+                </a>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/company-list']">
+                    Manage Company
+                </a>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/stock-list']">
+                   Manage Exchange
+                </a>
+                <a class="list-group-item list-group-item-action h5"[routerLink]="['/ipo-table']">
+                   Manage IPO Details
+                </a>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">
+                    Log Out
+                </a>
+            </div>
+        </div>
+        <div class="col-9">
+            <h3 class="v text-center">List Of Companies</h3>
         <table class="table table-responsive table-striped">
             <thead>
                 <tr>
-                    <th>ID Number</th>
-                    <th>Company Name</th>
-                    <th>CEO Name</th>
-                    <th>Board Members</th>
-                    <th>TurnOver</th>
-                    <th>Brief Description</th>
-                    <th>IPO Date</th>
+                    <th class="h5">ID Number</th>
+                    <th class="h5">Company Name</th>
+                    <th class="h5">CEO Name</th>
+                    <th class="h5">Board Members</th>
+                    <th class="h5">TurnOver</th>
+                    <th class="h5">Brief Description</th>
+                    <th class="h5">IPO Date</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -49,9 +53,12 @@
             </tbody>
         </table>
         <div class="text-center">
-            <button class="btn btn-primary" [routerLink]="['/company']">Add Company</button><br>
+            <button class="btn admin" [routerLink]="['/company']">Add Company</button><br>
             <br>
-            <button class="btn btn-primary" [routerLink]="['/main']">Back</button>
+            <button class="btn admin" [routerLink]="['/main']">Back</button>
+        </div>
         </div>
     </div>
 </div>
+
+

@@ -2,59 +2,59 @@
     <div class="row">
         <div class="col-3 mt-5">
             <div class="list-group text-center">
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
-                    <h5>Users Data</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/user']">
+                   Users Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
-                    <h5>Import Data</h5>
+                <a class="list-group-item list-group-item-action  h5" [routerLink]="['/import-data']">
+                    Import Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
-                    <h5>Add New Company</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/company-list']">
+                    Manage Company
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary"
-                    [routerLink]="['/manage-exchange']">
-                    <h5>Manage Exchange</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/stock-list']">
+                   Manage Exchange
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
-                    <h5>Add IPO Details</h5>
+                <a class="list-group-item list-group-item-action h5"[routerLink]="['/ipo-table']">
+                   Manage IPO Details
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
-                    <h5>Log Out</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">
+                    Log Out
                 </a>
             </div>
         </div>
         <div class="col-1"></div>
-        <div class="col-7 mt-4 p-4 shadow bg-white rounded">
+        <div class="col-7 mt-4 p-5 shadow bg-white rounded">
 
-            <h1 class="text-primary text-center text-white">Stock Exchange</h1>
+            <h3 class="v text-center">Stock Exchange</h3>
 
             <form [formGroup]="updateStockExchange">
                 <div class="form-group">
-                    <label for="exchangId" class="text-primary h5">Id: </label>
-                    <input type="number" class="form-control border-primary" formControlName="id">
+                    <label for="exchangId" class="h5">Id: </label>
+                    <input type="number" class="form-control" formControlName="id">
                 </div>
                 <div class="form-group">
-                    <label for="exchangName" class="text-primary h5">Stock Exchange Name: </label>
-                    <input type="text" class="form-control border-primary" placeholder="Name of Stock Exchange"
+                    <label for="exchangName" class="h5">Stock Exchange Name: </label>
+                    <input type="text" class="form-control" placeholder="Name of Stock Exchange"
                         formControlName="name">
                 </div>
-                <div>
-                    <label for="brief" class="text-primary h5">Brief:</label>
-                    <textarea class="form-control border-primary" placeholder="Brief About Stock Exchange" rows="3"
+                <div class="form-group">
+                    <label for="brief" class="h5">Brief:</label>
+                    <textarea class="form-control" placeholder="Brief About Stock Exchange" rows="3"
                         formControlName="brief"></textarea>
                 </div>
-                <div>
-                    <label for="contactAddress" class="text-primary h5">Contact Address:</label>
-                    <input type="text" class="form-control border-primary"
+                <div class="form-group">
+                    <label for="contactAddress" class="h5">Contact Address:</label>
+                    <input type="text" class="form-control"
                         placeholder="Contact Address of Stock Exchange" formControlName="address">
                 </div>
-                <div>
-                    <label for="remarks" class="text-primary h5">Remarks:</label>
-                    <textarea class="form-control border-primary mb-4" placeholder="Remarks About Stock Exchange"
+                <div class="form-group">
+                    <label for="remarks" class="h5">Remarks:</label>
+                    <textarea class="form-control mb-4" placeholder="Remarks About Stock Exchange"
                         rows="3" formControlName="remarks"></textarea>
                 </div>
-                <button class="btn btn-primary text-white text-center" (click)="updateStocks()"
-                    [disabled]="!updateStockExchange.valid">Update Stock Exchange</button>
+                <button class="btn admin text-center" (click)="updateStocks()"
+                    [disabled]="!updateStockExchange.valid">Update</button>
+                <button class="btn admin float-right text-center" (click)="back()">Back</button>    
             </form>
         </div>
     </div>

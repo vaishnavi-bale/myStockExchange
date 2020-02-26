@@ -1,54 +1,52 @@
 <div class="container-fluid row">
     <div class="w-25 col-3 mt-5">
         <div class="list-group text-center">
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
-                <h3>Company List</h3>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-companylist']">Company List
             </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-table']">
-                <h3>IPO List</h3>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-ipolist']">IPO List
             </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/compare-company']">
-                <h3>Compare Company</h3>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/compare-company']">Compare Company
             </a>
-            <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
-                <h3>Log Out</h3>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/compare-sector']">Compare Sector
+            </a>
+            <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">Log Out
             </a>
         </div>
     </div>
     <div class="col-1"></div>
-    <div class="col-7 mt-4 p-3 shadow bg-white rounded">
-        <h1 class="text-primary text-center text-Primary">Compare Company</h1>
+    <div class="col-7 mt-5 p-3 shadow bg-white rounded">
+        <h3 class="v text-center">Compare Company</h3>
         <form class="w-75 mt-3 container" [formGroup]="compareCompany">
             <div class="row">
                 <div class="form-group col">
-                    <label for="selectCompany" class="text-primary h5">Select Company:</label>
-                    <input type="text" class="form-control border-primary mb-3" formControlName="selectCompany"
+                    <label for="selectCompany" class="h5">Select Company:</label>
+                    <input type="text" class="form-control mb-3" formControlName="selectCompany"
                         placeholder="Enter Company name">
                 </div>
                 <div class="form-group col">
-                    <label for="selectStock" class="text-primary h5">Select Stock Exchange:</label>
-                    <input type="text" class="form-control border-primary mb-3" formControlName="selectStock"
+                    <label for="selectStock" class="h5">Select Stock Exchange:</label>
+                    <input type="text" class="form-control mb-3" formControlName="selectStock"
                         placeholder="Stock Exchange">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
-                    <label for="companyName" class="text-primary h5">Company Name:</label>
-                    <input type="text" class="form-control border-primary mb-3" formControlName="companyName"
+                    <label for="companyName" class="h5">Company Name:</label>
+                    <input type="text" class="form-control mb-3" formControlName="companyName"
                         placeholder="Company Name">
                 </div>
                 <div class="form-group col">
-                    <label for="period" class="text-primary h5">From period:</label>
-                    <input type="text" class="form-control border-primary mb-3" formControlName="period" placeholder=""
+                    <label for="period" class="h5">From period:</label>
+                    <input type="text" class="form-control mb-3" formControlName="period" placeholder=""
                         disabled>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col ">
-                    <input type="reset" value="Add Company +" class="btn btn-lg btn-info px-5">
+                    <input type="reset" value="Add Company +" class="btn btn-lg admin px-5">
                 </div>
                 <div class=" col">
-                    <input type="submit" value="Generate Maps" class="btn btn-lg btn-success px-5">
+                    <input type="submit" value="Generate Maps" class="btn btn-lg admin px-5">
                 </div>
             </div>
         </form>

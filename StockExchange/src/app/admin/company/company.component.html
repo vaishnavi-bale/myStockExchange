@@ -1,77 +1,77 @@
 <div class="container-fluid ">
     <div class="row">
         <div class="col-3 mt-5">
-            <!-- <div class="list-group text-center">
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/user']">
-                    <h5>Users Data</h5>
+            <div class="list-group text-center">
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/user']">
+                    Users Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/import-data']">
-                    <h5>Import Data</h5>
+                <a class="list-group-item list-group-item-action  h5" [routerLink]="['/import-data']">
+                    Import Data
                 </a>
-                <a class="list-group-item list-group-item-action text-primary" [routerLink]="['/company-list']">
-                    <h5>Add New Company</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/company-list']">
+                    Manage Company
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary"
-                    [routerLink]="['/manage-exchange']">
-                    <h5>Manage Exchange</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/stock-list']">
+                    Manage Exchange
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/ipo-details']">
-                    <h5>Add IPO Details</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/ipo-table']">
+                    Manage IPO Details
                 </a>
-                <a href="#" class="list-group-item list-group-item-action text-primary" [routerLink]="['/home']">
-                    <h5>Log Out</h5>
+                <a class="list-group-item list-group-item-action h5" [routerLink]="['/home']">
+                    Log Out
                 </a>
-            </div> -->
+            </div>
         </div>
-        <div class="col-6 mt-4 p-5 shadow bg-white rounded">
+        <div class="col-1"></div>
+        <div class="col-7 mt-4 p-5 shadow bg-white rounded">
 
-            <h1 class="text-primary text-center">Create New Company</h1>
+            <h3 class="v text-center">Create New Company</h3>
 
             <form action="" [formGroup]="companyForm" (ngSubmit)="onSubmit()">
 
                 <div class="row">
                     <div class="form-group col">
-                        <label for="id" class="text-primary h5">Company Code: </label>
-                        <input type="number" id="id" class="form-control border-primary" formControlName="id"
+                        <label for="id" class="h5">Company Code: </label>
+                        <input type="number" id="id" class="form-control" formControlName="id"
                             placeholder="ID Number">
                     </div>
                     <div class="form-group col">
-                        <label for="companyName" class="text-primary h5">Company Name : </label>
-                        <input type="text" id="company_name" class="form-control border-primary"
+                        <label for="companyName" class="h5">Company Name : </label>
+                        <input type="text" id="company_name" class="form-control"
                             formControlName="companyName" placeholder="Company Name">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col">
-                        <label for="ceoName" class="text-primary h5">CEO Name : </label>
-                        <input type="text" id="ceo_name" class="form-control border-primary" formControlName="ceoName"
+                        <label for="ceoName" class="h5">CEO Name : </label>
+                        <input type="text" id="ceo_name" class="form-control" formControlName="ceoName"
                             placeholder="CEO Name">
                     </div>
                     <div class="form-group col">
-                        <label for="board_mem" class="text-primary h5">Board Members : </label>
-                        <input type="text" id="board_mem" class="form-control border-primary"
+                        <label for="board_mem" class="h5">Board Members : </label>
+                        <input type="text" id="board_mem" class="form-control"
                             formControlName="boardMember" placeholder="Board Members">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="turnOver" class="text-primary h5">TurnOver: </label>
-                    <input type="number" id="turnOver" class="form-control border-primary" formControlName="turnOver"
+                    <label for="turnOver" class="h5">TurnOver: </label>
+                    <input type="number" id="turnOver" class="form-control" formControlName="turnOver"
                         placeholder="Turn Over">
                 </div>
                 <div class="form-group">
-                    <label for="description" class="text-primary h5">Brief Description : </label>
-                    <input type="textarea" class="form-control border-primary" id="desp"
+                    <label for="description" class="h5">Brief Description : </label>
+                    <input type="textarea" class="form-control" id="desp"
                         formControlName="briefDescription" placeholder="Brief Description">
                 </div>
                 <div class="form-group">
-                    <label for="ipo_date" class="text-primary h5">IPO Date : </label>
-                    <input type="date" id="ipo_date" class="form-control border-primary" formControlName="ipoDate"
+                    <label for="ipo_date" class="h5">IPO Date : </label>
+                    <input type="date" id="ipo_date" class="form-control" formControlName="ipoDate"
                         placeholder="IPO Date">
                 </div>
 
-                <button type="submit" class="btn btn-primary" (click)="addCompanyMethod()"
+                <button type="submit" class="btn admin " (click)="addCompanyMethod()"
                     [disabled]="!companyForm.valid">Save</button>
-                <button type="submit" class="btn btn-primary float-right" (click)="back()"
+                <button type="submit" class="btn admin float-right" (click)="back()"
                 >Back</button>    
             </form>
         </div>

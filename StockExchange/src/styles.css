@@ -5,7 +5,7 @@ main{
     /* background:url("./assets/images1/background1.png") no-repeat; */
 }
 body {
-    background-image: url("./assets/images1/bg1.png");
+    background-image: url("./assets/images1/b13.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
@@ -27,5 +27,32 @@ body {
       background-color: whitesmoke;
   }
 .nav-link{
-    color: black;
+    color: #0c2e8a !important;
+    font-size: medium;
+    font-weight: 600;
+}
+.nav-link:hover{
+    color: darkgreen !important;
+}
+.v{
+    font-family:"Montserrat",sans-serif;
+    font-weight: 400px;
+    font-size: 50px;
+    color: #0c2e8a;
+}
+.h5{
+    color: #0c2e8a;
+}
+.admin{
+    background-color: #0c2e8a;
+    color: whitesmoke;
+}
+.admin:hover{
+    color:turquoise;
+}
+.m{
+    font-family:"Montserrat",sans-serif;
+    font-weight: 400px;
+    font-size: 60px;
+    color: #0c2e8a;
 }

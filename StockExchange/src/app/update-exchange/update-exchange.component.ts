@@ -32,7 +32,8 @@ export class UpdateExchangeComponent implements OnInit {
     this.stockExchangeService.updateStockExchange(this.updateStockExchange.value).subscribe(u=>{
       this.router.navigate(['/stock-list']);
     })
-
   }
-
+  back(){
+    this.router.navigate(['main'])
+  }
 }

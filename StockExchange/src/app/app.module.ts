@@ -26,7 +26,9 @@ import { StocklistComponent } from './stocklist/stocklist.component';
 import { UpdateExchangeComponent } from './update-exchange/update-exchange.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { ContactUsComponent } from './contact-us/contact-us.component'
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
+import { UserIpolistComponent } from './user-ipolist/user-ipolist.component'
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component'
     UpdateExchangeComponent,
     SidebarComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    UserCompanylistComponent,
+    UserIpolistComponent
   ],
   imports: [
     BrowserModule,
