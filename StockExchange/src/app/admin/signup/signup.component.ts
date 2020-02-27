@@ -19,7 +19,8 @@ export class SignupComponent implements OnInit {
       email:['',[Validators.required,Validators.email]],
       phoneNumber:['',Validators.required],
       userName:['',Validators.required],
-      password:['',Validators.required]
+      password:['',Validators.required],
+      code:[Math.random()*100000]
     });
 
   }

@@ -24,6 +24,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
 import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
+import { ActivateComponent } from './activate/activate.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -50,6 +51,7 @@ const routes: Routes = [
 {path:'contact-us',component:ContactUsComponent},
 {path:'user-companylist',component:UserCompanylistComponent},
 {path:'user-ipolist',component:UserIpolistComponent},
+{path:'user/activate',component:ActivateComponent},
 { path: ' ',component:AppComponent}
 ];
 

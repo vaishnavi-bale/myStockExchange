@@ -23,12 +23,14 @@ public class User implements Serializable{
 	private String password;
 	@Transient
 	private String registerStatus;
+	private long code;
+	private String active="no";
 
 	public User() {
 
 	}
 
-	public User(Integer id, String fullName, String email, long phoneNumber, String userName, String password) {
+	public User(Integer id, String fullName, String email, long phoneNumber, String userName, String password, String active) {
 		super();
 		this.id = id;
 		this.fullName = fullName;
@@ -36,6 +38,7 @@ public class User implements Serializable{
 		this.phoneNumber = phoneNumber;
 		this.userName = userName;
 		this.password = password;
+		this.active=active;
 	}
 
 	public Integer getId() {
@@ -94,11 +97,28 @@ public class User implements Serializable{
 	public void setRegisterStatus(String registerStatus) {
 		this.registerStatus = registerStatus;
 	}
+	
+    
+	public long getCode() {
+		return code;
+	}
+
+	public void setCode(long code) {
+		this.code = code;
+	}
+
+	public String getActive() {
+		return active;
+	}
+
+	public void setActive(String active) {
+		this.active = active;
+	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fullName=" + fullName + ", email=" + email + ", phoneNumber=" + phoneNumber + ", userName="
-				+ userName + ", password=" + password + "]";
+				+ userName + ", password=" + password + ",active=" + active + "]";
 	}
 	
 }

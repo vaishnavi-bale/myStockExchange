@@ -28,7 +28,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
-import { UserIpolistComponent } from './user-ipolist/user-ipolist.component'
+import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
+import { ActivateComponent } from './activate/activate.component'
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UserIpolistComponent } from './user-ipolist/user-ipolist.component'
     AboutUsComponent,
     ContactUsComponent,
     UserCompanylistComponent,
-    UserIpolistComponent
+    UserIpolistComponent,
+    ActivateComponent
   ],
   imports: [
     BrowserModule,

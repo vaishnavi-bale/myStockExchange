@@ -24,4 +24,13 @@ export class HomeService {
     getUserById(id: number):Observable<User>{
       return this.httpClient.get<User>(this.httpUrl+id);
     }
+    getUserByCode(code:number):Observable<User>{
+      return this.httpClient.get<User>(this.httpUrl+"activate/"+code);
+    }
+    // serviceActivation(obj){
+    //   return this.httpClient.put(`http://localhost:8002/activate`,obj)
+    // }
+    // updateActivation(obj){
+    //   return this.httpClient.put<User>(this.httpUrl,obj);
+    // }
 }

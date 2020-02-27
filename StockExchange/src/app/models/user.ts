@@ -6,4 +6,5 @@ export class User{
     userName: string;
     password: string;
     registerStatus:String;
+    active:String;
 }
