@@ -25,6 +25,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
 import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
 import { ActivateComponent } from './activate/activate.component';
+import { LoginGuard } from './login.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -38,7 +40,7 @@ const routes: Routes = [
 { path :'update',component:UpdateComponent},
 { path:'manage-exchange',component:ManageExchangeComponent},
 { path:'ipo-details',component:IpoDetailsComponent},
-{path: 'user-main',component:UserMainComponent},
+{path: 'user-main',component:UserMainComponent,canActivate:[LoginGuard]},
 {path: 'company-list',component:CompanylistComponent},
 {path: 'update-company',component:UpdateCompanyComponent},
 {path:'compare-company',component:CompareCompanyComponent},
@@ -52,6 +54,7 @@ const routes: Routes = [
 {path:'user-companylist',component:UserCompanylistComponent},
 {path:'user-ipolist',component:UserIpolistComponent},
 {path:'user/activate',component:ActivateComponent},
+{path:'logout',component:LogoutComponent},
 { path: ' ',component:AppComponent}
 ];
 

@@ -17,7 +17,6 @@
             <label class="form-check-label h5"><input class="form-check-input" type="checkbox"
                         name="remember"> Remember me</label>
         </div>
-        <button type="submit" class="btn btn-lg admin" [disabled]="!loginForm.valid"
-            [routerLink]="['/user-main']">Submit</button>
+        <button type="submit" class="btn btn-lg admin" [disabled]="!loginForm.valid" (click)="isValid()">Submit</button>
     </form>
 </div>

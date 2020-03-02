@@ -10,6 +10,9 @@ import { HomeService} from 'src/app/home.service';
 export class SignupComponent implements OnInit {
 
   addForm: FormGroup;
+
+  users:User[];
+
   constructor(private formBuilder: FormBuilder, private homeService: HomeService) { }
 
   ngOnInit() {
@@ -23,13 +26,35 @@ export class SignupComponent implements OnInit {
       code:[Math.random()*100000]
     });
 
+    this.homeService.getAllUsers().subscribe(u => {
+      this.users=u;
+    })
+
   }
+
+ 
+
+  emailValid(e:string){
+    for(let user of this.users){
+      if(user.email===e){
+        return false;
+      }
+    }
+      return true;
+  }
+
   addUserMethod(){
-    alert('Registered Successfully')
-    this.homeService.saveUser(this.addForm.value).subscribe(data => {
-      console.log('User Inserted Successfully');
-      console.log('coming status'+data.registerStatus);
-    });
+    let e = this.addForm.controls.email.value;
+    if(this.emailValid(e)){
+      alert('Registered Successfully')
+      this.homeService.saveUser(this.addForm.value).subscribe(data => {
+        console.log('User Inserted Successfully');
+        console.log('coming status'+data.registerStatus);
+      });
+    }else{
+      alert('Email Already Exists')
+    }
+   
   }
   onSubmit(){
     console.log(this.addForm.value);

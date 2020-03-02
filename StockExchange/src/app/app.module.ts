@@ -29,7 +29,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
 import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
-import { ActivateComponent } from './activate/activate.component'
+import { ActivateComponent } from './activate/activate.component';
+import { LogoutComponent } from './logout/logout.component'
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ActivateComponent } from './activate/activate.component'
     ContactUsComponent,
     UserCompanylistComponent,
     UserIpolistComponent,
-    ActivateComponent
+    ActivateComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

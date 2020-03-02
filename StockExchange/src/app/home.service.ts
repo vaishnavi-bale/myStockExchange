@@ -7,8 +7,16 @@ import { User } from './models/user';
   providedIn: 'root'
 })
 export class HomeService {
-  httpUrl='http://localhost:8002/user/';
+  httpUrl='http://localhost:8001/user/';
   constructor(private httpClient:HttpClient) { }
+
+  LoggedIn(){
+    let user_id=localStorage.getItem('userId');
+    if(user_id==null)
+    return false;
+    else return true;
+  }
+
   getAllUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(this.httpUrl);
   }
