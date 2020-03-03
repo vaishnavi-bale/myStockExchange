@@ -7,7 +7,7 @@ import { StockExchange } from '../models/stock-exchange';
   providedIn: 'root'
 })
 export class StockExchangeService {
-  httpUrl='http://localhost:8002/stockexchange/';
+  httpUrl='http://localhost:8003/stockexchange/';
   constructor(private httpClient:HttpClient) { }
   getAllStockExchange(): Observable<StockExchange[]>{
     return this.httpClient.get<StockExchange[]>(this.httpUrl);

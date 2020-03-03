@@ -8,7 +8,7 @@ import { Ipo } from '../models/ipo';
   providedIn: 'root'
 })
 export class IpoService {
-  httpUrl='http://localhost:8002/ipodetails/';
+  httpUrl='http://localhost:8004/ipodetails/';
   constructor(private httpClient:HttpClient) { }
   getAllIpo(): Observable<Ipo[]>{
     return this.httpClient.get<Ipo[]>(this.httpUrl);

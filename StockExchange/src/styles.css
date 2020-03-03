@@ -42,7 +42,7 @@ body {
     color: #0c2e8a;
 }
 .h5{
-    color: #0c2e8a;
+    color: #0c2e8a !important;
 }
 
 .admin{
@@ -53,7 +53,7 @@ body {
     color:lightcoral;
 }
 .list-group-item:hover{
-   color: lightcoral;
+   color: lightcoral !important;
 }
 .s:hover{
     color:lightcoral;
