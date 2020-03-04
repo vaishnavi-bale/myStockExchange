@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-    <div class="col-3 mt-5">
+    <div class="col-lg-3 col-sm-3 col-md-3 mt-5">
         <div class="list-group text-center">
             <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-companylist']">Company List
             </a>
@@ -15,9 +15,10 @@
         </div>
     </div>
     <div class="col-1"></div>
-    <div class="col-7 mt-5 p-3 shadow bg-white rounded">
+    <div class="col-lg-7 col-md-6 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
         <h3 class="v text-center">Compare Company</h3>
-        <form class="w-75 mt-3 container" [formGroup]="compareCompany">
+        <div>
+        <form [formGroup]="compareCompany">
             <div class="row">
                 <div class="form-group col">
                     <label for="selectCompany" class="h5">Select Company:</label>
@@ -38,18 +39,19 @@
                 </div>
                 <div class="form-group col">
                     <label for="period" class="h5">From period:</label>
-                    <input type="text" class="form-control mb-3" formControlName="period" placeholder="" disabled>
+                    <input type="text" class="form-control mb-3" formControlName="period" placeholder="From Period" disabled>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col ">
+                <div class="col">
                     <input type="reset" value="Add Company +" class="btn btn-lg admin px-5">
                 </div>
-                <div class=" col">
+                <div class="col">
                     <input type="submit" value="Generate Maps" class="btn btn-lg admin px-5">
                 </div>
             </div>
         </form>
+    </div>
     </div>
     </div>
 </div>

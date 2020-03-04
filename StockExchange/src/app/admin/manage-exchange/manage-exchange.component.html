@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 mt-5">
+        <div class="col-lg-3 col-sm-3 col-md-3 mt-5">
         <div class="list-group text-center">
             <a class="list-group-item list-group-item-action h5" [routerLink]="['/user']">
                 Users Data
@@ -23,10 +23,11 @@
         </div>
         </div>
         <!-- <div class="col-1"></div> -->
-        <div class="col-8 mt-5 p-5 shadow bg-white rounded">
+        <div class="col-lg-7 col-md-5 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
             <div class="text-center">
             <h3 class="v">Stock Exchange</h3>
-        </div>
+            </div>
+            <div>
             <form [formGroup]="stockExchange" (ngSubmit)="stockExchanges()">
                 <div class="form-group">
                     <label for="exchangName" class="h5">Stock Exchange Name: </label>
@@ -52,5 +53,6 @@
                     [disabled]="!stockExchange.valid">Add Stock Exchange</button>
                 <button class="btn admin text-white float-right" (click)="back()">Back</button>
             </form>
+        </div>
         </div>
     </div>

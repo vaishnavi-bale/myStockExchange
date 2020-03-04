@@ -1,7 +1,11 @@
-<div class="container mt-4 w-50 h-100 p-5 lg-5 shadow bg-white rounded">
-<div class="text-center">
-  <h3 class="v ">Sign Up</h3>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-3 col-md-2 col-sm-1"></div>
+      <div class="col-lg-6 col-md-7 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
+        <div class="text-center">
+  <h3 class="v">Sign Up</h3>
 </div>
+<div>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <div class="form-group">
@@ -36,4 +40,7 @@
         [disabled]="!addForm.valid">Submit</button>
     </div>
   </form>
+</div>  
+</div>
+</div>
 </div>
