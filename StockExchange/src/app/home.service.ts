@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './models/user';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
   httpUrl='http://localhost:8001/user/';
-  constructor(private httpClient:HttpClient) { }
+  code: number;
+  user: User;
+  constructor(private httpClient:HttpClient,private router:Router) { }
 
   LoggedIn(){
     let user_id=localStorage.getItem('userId');
@@ -16,6 +19,26 @@ export class HomeService {
     return false;
     else return true;
   }
+
+  isActivated(user:User){
+    if(user.active=="yes"){
+          return true;
+    }
+  }
+  // activate_user(){
+  //   this.getUserByCode(this.code).subscribe(u => {
+  //     this.user = u;
+  //     this.update_user();
+  //   })
+  // }
+  // update_user(){
+  //   let new_user:User = this.user;
+  //   new_user.active="yes";
+  //   this.updateUser(new_user).subscribe(u => {
+  //     alert("User Activated Successfully")
+  //     this.router.navigate(['/login'])
+  //   })
+  // }
 
   getAllUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(this.httpUrl);

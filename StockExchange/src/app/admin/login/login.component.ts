@@ -38,7 +38,11 @@ export class LoginComponent implements OnInit {
      if(this.login(userName,password)){
        localStorage.removeItem('userId');
        localStorage.setItem('userId',this.currentUser.id.toString());
-     this.router.navigate(['/user-main']);
+       if(this.homeService.isActivated(this.currentUser)){
+     this.router.navigate(['/login']);
+       }else{
+         alert("Please activate your account to login")
+       }
      }else{
        alert("Invalid Username or Password");
        this.loginForm.reset();

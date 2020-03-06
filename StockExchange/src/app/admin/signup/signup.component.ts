@@ -46,11 +46,12 @@ export class SignupComponent implements OnInit {
   addUserMethod(){
     let e = this.addForm.controls.email.value;
     if(this.emailValid(e)){
-      alert('Registered Successfully')
+      alert('Please verify your registered email to activate your account')
       this.homeService.saveUser(this.addForm.value).subscribe(data => {
         console.log('User Inserted Successfully');
         console.log('coming status'+data.registerStatus);
       });
+     
     }else{
       alert('Email Already Exists')
     }
