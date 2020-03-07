@@ -20,7 +20,9 @@ export class UpdateComponent implements OnInit {
       email:['',[Validators.required,Validators.email]],
       phoneNumber:['',Validators.required],
       userName:['',Validators.required],
-      password:['',Validators.required]
+      password:['',Validators.required],
+      active:[],
+      code:[]
     });
 
     const id = localStorage.getItem('userId');

@@ -18,17 +18,22 @@ public class StockPrice implements Serializable {
 	private static final long serialVersionUID = 4361765948952898725L;
 	@Id
 	@GeneratedValue
-	private Integer companyCode;
+	private Integer id;
+	private String companyCode;
 	private String stockExchange;
-	private int currentPrice;
+	private long currentPrice;
 	private LocalDate date;
 	private LocalTime time;
 
 	 public StockPrice() {
 	}
 
-	public StockPrice(int companyCode, String stockExchange, int currentPrice, LocalDate date, LocalTime time) {
+	
+
+	public StockPrice(Integer id, String companyCode, String stockExchange, long currentPrice, LocalDate date,
+			LocalTime time) {
 		super();
+		this.id = id;
 		this.companyCode = companyCode;
 		this.stockExchange = stockExchange;
 		this.currentPrice = currentPrice;
@@ -36,13 +41,43 @@ public class StockPrice implements Serializable {
 		this.time = time;
 	}
 
-	public int getCompanyCode() {
+    
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public String getCompanyCode() {
 		return companyCode;
 	}
 
-	public void setCompanyCode(int companyCode) {
+
+
+	public void setCompanyCode(String companyCode) {
 		this.companyCode = companyCode;
 	}
+
+
+
+	public long getCurrentPrice() {
+		return currentPrice;
+	}
+
+
+
+	public void setCurrentPrice(long currentPrice) {
+		this.currentPrice = currentPrice;
+	}
+
+
 
 	public String getStockExchange() {
 		return stockExchange;
@@ -50,14 +85,6 @@ public class StockPrice implements Serializable {
 
 	public void setStockExchange(String stockExchange) {
 		this.stockExchange = stockExchange;
-	}
-
-	public int getCurrentPrice() {
-		return currentPrice;
-	}
-
-	public void setCurrentPrice(int currentPrice) {
-		this.currentPrice = currentPrice;
 	}
 
 	public LocalDate getDate() {

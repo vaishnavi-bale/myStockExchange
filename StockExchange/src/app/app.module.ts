@@ -30,7 +30,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UserCompanylistComponent } from './user-companylist/user-companylist.component';
 import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
 import { ActivateComponent } from './activate/activate.component';
-import { LogoutComponent } from './logout/logout.component'
+import { LogoutComponent } from './logout/logout.component';
+import { ChartsComponent } from './charts/charts.component';
+import {HighchartsChartComponent} from 'highcharts-angular';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { LogoutComponent } from './logout/logout.component'
     UserCompanylistComponent,
     UserIpolistComponent,
     ActivateComponent,
-    LogoutComponent
+    LogoutComponent,
+    ChartsComponent,
+    HighchartsChartComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

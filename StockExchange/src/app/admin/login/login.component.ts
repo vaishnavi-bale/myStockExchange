@@ -36,10 +36,10 @@ export class LoginComponent implements OnInit {
      this.router.navigate(['/main']);
    }else{
      if(this.login(userName,password)){
-       localStorage.removeItem('userId');
-       localStorage.setItem('userId',this.currentUser.id.toString());
-       if(this.homeService.isActivated(this.currentUser)){
-     this.router.navigate(['/login']);
+      if(this.homeService.isActivated(this.currentUser)){
+        localStorage.removeItem('userId');
+        localStorage.setItem('userId',this.currentUser.id.toString());
+     this.router.navigate(['/user-main']);
        }else{
          alert("Please activate your account to login")
        }

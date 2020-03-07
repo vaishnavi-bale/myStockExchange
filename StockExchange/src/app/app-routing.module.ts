@@ -27,6 +27,7 @@ import { UserIpolistComponent } from './user-ipolist/user-ipolist.component';
 import { ActivateComponent } from './activate/activate.component';
 import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -55,6 +56,7 @@ const routes: Routes = [
 {path:'user-ipolist',component:UserIpolistComponent},
 {path:'user/activate',component:ActivateComponent},
 {path:'logout',component:LogoutComponent},
+{path:'chart',component:ChartsComponent},
 { path: ' ',component:AppComponent}
 ];
 

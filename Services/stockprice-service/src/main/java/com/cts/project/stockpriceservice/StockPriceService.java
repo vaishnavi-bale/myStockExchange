@@ -2,6 +2,8 @@ package com.cts.project.stockpriceservice;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface StockPriceService {
 
 	public StockPrice saveStockPrice(StockPrice stockPrice);
@@ -13,4 +15,6 @@ public interface StockPriceService {
 	public List<StockPrice> getAllStockPrice();
 	
 	public StockPrice getStockPriceById(int id);
+	
+	public ImportSummary addStockPricesFromExcelSheet(MultipartFile file) throws Exception;
 }

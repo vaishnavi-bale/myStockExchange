@@ -1,6 +1,9 @@
 package com.cts.project.userservice;
 
-import static org.junit.Assert.*;
+
+
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 

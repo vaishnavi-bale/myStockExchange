@@ -28,13 +28,13 @@
                 <h3 class="v">Upload Excel</h3>
             </div>
             <div class="container text-center mt-5">
-                <form [formGroup]="uploadFile" class="custom-file w-100">
+                <form [formGroup]="uploadFile" class="custom-file w-100" (ngSubmit)="uploadData()">
                     <div class="formGroup" class="mb-2">
-                        <input type="file" formControlName="file" class="formControl custom-file-input ">
+                        <input type="file" formControlName="file" class="formControl custom-file-input" (change)="onFileChange($event)">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 
-                        <button type="Upload" class="btn admin mb-5">Upload</button>
+                        <button type="Upload" class="btn admin mb-5" [disabled]="!uploadFile.valid">Upload</button>
                 
                 </form>
             </div>

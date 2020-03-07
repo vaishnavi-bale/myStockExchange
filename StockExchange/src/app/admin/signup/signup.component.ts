@@ -35,12 +35,15 @@ export class SignupComponent implements OnInit {
  
 
   emailValid(e:string){
+    if(this.users!=null){
     for(let user of this.users){
       if(user.email===e){
         return false;
       }
     }
       return true;
+     }
+     return true;
   }
 
   addUserMethod(){
