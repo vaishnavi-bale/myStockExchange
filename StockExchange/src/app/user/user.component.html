@@ -29,10 +29,11 @@
                     <tr>
                         <th class="h5">ID</th>
                         <th class="h5">Full Name</th>
+                        <th class="h5">User Name</th>
                         <th class="h5">Email</th>
                         <th class="h5">Phone Number</th>
-                        <th class="h5">User Name</th>
-                        <th class="h5">Password</th>
+                       
+                        <!-- <th class="h5">Password</th> -->
                         <th class="h5"></th>
                         <th class="h5"></th>
                     </tr>
@@ -41,12 +42,14 @@
                     <tr *ngFor="let user of users" class="s">
                         <td>{{user.id}}</td>    
                         <td>{{user.fullName}}</td>
+                        <td>{{user.userName}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.phoneNumber}}</td>
-                        <td>{{user.userName}}</td>
-                        <td>{{user.password}}</td>
-                        <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button></td>
-                        <td><button class="btn btn-success" (click)="updateUser(user)"> Update</button></td>
+                     
+                        <!-- <td>{{user.password}}</td> -->
+                        <td><button class="btn btn-success" (click)="updateUser(user)"><i class="fa fa-pencil"></i></button></td>
+                        <td><button class="btn btn-danger" (click)="deleteUser(user)"><i class="fa fa-trash"></i></button></td>
+   
                     </tr>
                 </tbody>
             </table>

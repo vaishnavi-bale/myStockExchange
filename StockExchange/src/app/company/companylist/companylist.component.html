@@ -47,8 +47,9 @@
                     <td>{{company.turnOver}}</td>
                     <td>{{company.briefDescription}}</td>
                     <td>{{company.ipoDate}}</td>
-                    <td><button class="btn btn-danger" (click)="deleteCompany(company)"> Delete</button></td>
-                    <td><button class="btn btn-success" (click)="updateCompany(company)"> Update</button></td>
+                    <td><button class="btn btn-success" (click)="updateCompany(company)"><i class="fa fa-pencil"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="deleteCompany(company)"><i class="fa fa-trash"></i></button></td>
+                  
                 </tr>
             </tbody>
         </table>

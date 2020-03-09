@@ -47,8 +47,9 @@
                     <td>{{ipo.noOfShares}}</td>
                     <td>{{ipo.dateTime}}</td>
                     <td>{{ipo.remarks}}</td>
-                    <td><button class="btn btn-danger" (click)="deleteIpo(ipo)"> Delete</button></td>
-                    <td><button class="btn btn-success" (click)="updateIpo(ipo)"> Update</button></td>
+                    <td><button class="btn btn-success" (click)="updateIpo(ipo)"><i class="fa fa-pencil"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="deleteIpo(ipo)"><i class="fa fa-trash"></i></button></td>
+                  
                 </tr>
             </tbody>
         </table>

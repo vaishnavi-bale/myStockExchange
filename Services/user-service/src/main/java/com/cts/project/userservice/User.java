@@ -25,12 +25,15 @@ public class User implements Serializable{
 	private String registerStatus;
 	private long code;
 	private String active="no";
+	private String role="ROLE_USER";
 
 	public User() {
 
 	}
 
-	public User(Integer id, String fullName, String email, long phoneNumber, String userName, String password, String active) {
+	
+	public User(Integer id, String fullName, String email, long phoneNumber, String userName, String password,
+			String registerStatus, long code, String active, String role) {
 		super();
 		this.id = id;
 		this.fullName = fullName;
@@ -38,8 +41,12 @@ public class User implements Serializable{
 		this.phoneNumber = phoneNumber;
 		this.userName = userName;
 		this.password = password;
-		this.active=active;
+		this.registerStatus = registerStatus;
+		this.code = code;
+		this.active = active;
+		this.role = role;
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -114,6 +121,17 @@ public class User implements Serializable{
 	public void setActive(String active) {
 		this.active = active;
 	}
+	
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 
 	@Override
 	public String toString() {

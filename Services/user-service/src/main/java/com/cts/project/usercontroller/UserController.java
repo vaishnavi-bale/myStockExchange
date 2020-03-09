@@ -33,6 +33,12 @@ public class UserController {
 
 	@Autowired
 	JavaMailSender jms;
+	
+	@GetMapping(value="/login")
+  	public ResponseEntity<?> login()
+  	{
+  		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+  	}
 
 	@GetMapping("/user/activate/{code}")
 	public User getUserByCode(@PathVariable long code) {

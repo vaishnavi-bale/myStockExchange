@@ -8,10 +8,10 @@
 <div>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="id" class="h5">ID Number : </label>
         <input type="number" class="form-control" formControlName="id" placeholder="Id Number">
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="Full Name" class="h5">Full Name : </label>
         <input type="text" class="form-control" formControlName="fullName" placeholder="Full Name">
@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label for="Phone" class="h5">Phone Number : </label>
-        <input type="number"  class="form-control" formControlName="phoneNumber"
+        <input type="text"  class="form-control" formControlName="phoneNumber"
           placeholder="Phone Number" minlength="10" maxlength="10">
       </div>
       <div class="form-group">

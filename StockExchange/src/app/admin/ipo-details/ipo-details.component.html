@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label for="remarks" class="h5">Remarks:</label>
-                    <textarea class="form-control mb-4" placeholder="Remarks About Stock Exchange" rows="3"
+                    <textarea class="form-control mb-4" type="text" placeholder="Remarks About Stock Exchange" rows="3"
                         formControlName="remarks"></textarea>
                 </div>
                 <button class="btn admin text-white" (click)="AddIpo()" [disabled]="!ipoDetails.valid">Add IPO

@@ -51,6 +51,7 @@ body {
 }
 .admin:hover{
     color:lightcoral;
+    transform:scale(1.1)
 }
 .list-group-item:hover{
    color: lightcoral !important;
@@ -64,3 +65,23 @@ body {
     font-size: 60px;
     color: #0c2e8a;
 }
+input[type=text],[type=number],[type=email],[type=password],[type=textarea],[type=date],textarea[type=text]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color: steelblue;
+  }
+  
+  input:focus{
+    outline: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color:#0c2e8a;
+  }
+  
+  .form-control{
+    box-shadow: none;
+  }
