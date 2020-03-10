@@ -31,9 +31,11 @@
                     <th class="h5">Company Name</th>
                     <th class="h5">CEO Name</th>
                     <th class="h5">Board Members</th>
+                    <th class="h5">Listed In Stock Exchanges</th>
+                    <th class="h5">Sector</th>
                     <th class="h5">TurnOver</th>
                     <th class="h5">Brief Description</th>
-                    <th class="h5">IPO Date</th>
+                    <th class="h5">Sector Code</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -44,9 +46,11 @@
                     <td>{{company.companyName}}</td>
                     <td>{{company.ceoName}}</td>
                     <td>{{company.boardMember}}</td>
+                    <td>{{company.listed_in_stock_exchanges}}</td>
+                    <td>{{company.sector}}</td>
                     <td>{{company.turnOver}}</td>
                     <td>{{company.briefDescription}}</td>
-                    <td>{{company.ipoDate}}</td>
+                    <td>{{company.stock_code}}</td>
                     <td><button class="btn btn-success" (click)="updateCompany(company)"><i class="fa fa-pencil"></i></button></td>
                     <td><button class="btn btn-danger" (click)="deleteCompany(company)"><i class="fa fa-trash"></i></button></td>
                   

@@ -1,0 +1,8 @@
+select{
+    outline: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    border-bottom-color: #0c2e8a;
+}
