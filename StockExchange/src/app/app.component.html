@@ -42,7 +42,7 @@
                                <a class="nav-link" [routerLink]="['/signup']">Sign Up</a>
                             </li> -->
                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
-                                <a class="nav-link" [routerLink]="['/']">Profile</a>
+                                <a class="nav-link" [routerLink]="['/profile']">Profile</a>
                              </li>
                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/user-companylist']">Company List</a>

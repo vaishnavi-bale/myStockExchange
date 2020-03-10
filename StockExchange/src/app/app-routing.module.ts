@@ -28,6 +28,7 @@ import { ActivateComponent } from './activate/activate.component';
 import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { ChartsComponent } from './charts/charts.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -57,6 +58,7 @@ const routes: Routes = [
 {path:'user/activate',component:ActivateComponent},
 {path:'logout',component:LogoutComponent},
 {path:'chart',component:ChartsComponent},
+{path:'profile',component:ProfileComponent},
 { path: ' ',component:AppComponent}
 ];
 

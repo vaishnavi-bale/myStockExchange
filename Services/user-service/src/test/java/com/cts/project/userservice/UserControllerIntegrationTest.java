@@ -49,18 +49,18 @@ public class UserControllerIntegrationTest {
 		System.out.println("Test::Response body:::: "+response.getBody());
 		assertTrue(response.getBody().contains(expected));
 	}
-	@Test
-	public void testAdd() throws Exception{
-		String url="http://localhost:"+port+"/user";
-		System.out.println("Port::"+url);
-		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		User user=new User(25, "Syed", "syed@gmail.com", 42534354, "syed", "syed", null);
-		HttpEntity<User> entity=new HttpEntity<User>(user, headers);
-		ResponseEntity<String> response=restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-		String expected="{\"id\":25,\"fullName\":\"Syed\",\"email\":\"syed@gmail.com\"";
-		System.out.println("Test::Response body:::: "+response.getBody());
-		assertTrue(response.getBody().contains(expected));
-	}
+//	@Test
+//	public void testAdd() throws Exception{
+//		String url="http://localhost:"+port+"/user";
+//		System.out.println("Port::"+url);
+//		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+//		User user=new User(25, "Syed", "syed@gmail.com", 42534354, "syed", "syed", null);
+//		HttpEntity<User> entity=new HttpEntity<User>(user, headers);
+//		ResponseEntity<String> response=restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+//		String expected="{\"id\":25,\"fullName\":\"Syed\",\"email\":\"syed@gmail.com\"";
+//		System.out.println("Test::Response body:::: "+response.getBody());
+//		assertTrue(response.getBody().contains(expected));
+//	}
 //	@Test
 //	public void testDelete() throws Exception{
 //		String url="http://localhost:"+port+"/user/139";

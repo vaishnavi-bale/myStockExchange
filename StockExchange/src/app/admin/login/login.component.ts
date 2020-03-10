@@ -27,44 +27,48 @@ export class LoginComponent implements OnInit {
     })
   }
 
-//  isValid(){
-//    let admin_userName="admin";
-//    let admin_password="admin";
-//   let userName=this.loginForm.controls.name.value;
-//   let password=this.loginForm.controls.password.value;
+ isValid(){
+   let admin_userName="admin";
+   let admin_password="admin";
+  let userName=this.loginForm.controls.name.value;
+  let password=this.loginForm.controls.password.value;
 
-//    if((userName===admin_userName) && (password===admin_password)){
-//      this.router.navigate(['/main']);
-//    }else{
-//      if(this.login(userName,password)){
-//       if(this.homeService.isActivated(this.currentUser)){
-//         localStorage.removeItem('userId');
-//         localStorage.setItem('userId',this.currentUser.id.toString());
-//      this.router.navigate(['/user-main']);
-//        }else{
-//          alert("Please activate your account to login")
-//        }
-//      }else{
-//        alert("Invalid Username or Password");
-//        this.loginForm.reset();
-//      }
-//    }
-//  }
+   if((userName===admin_userName) && (password===admin_password)){
+     this.router.navigate(['/main']);
+   }else{
+     if(this.login(userName,password)){
+      if(this.homeService.isActivated(this.currentUser)){
+        localStorage.removeItem('userId');
+        localStorage.setItem('userId',this.currentUser.id.toString());
+     this.router.navigate(['/user-main']);
+       }else{
+         alert("Please activate your account to login")
+       }
+     }else{
+       alert("Invalid Username or Password");
+       this.loginForm.reset();
+     }
+   }
+ }
 
-//   login(userName:string,password:string){
-//       for(let user of this.users ){
-//         if((userName===user.userName) && (password===user.password)){
-//              this.currentUser=user;
-//           return true;
-//         }
-//       }
-//       return false;
-//   }
+  login(userName:string,password:string){
+      for(let user of this.users ){
+        if((userName===user.userName) && (password===user.password)){
+             this.currentUser=user;
+          return true;
+        }
+      }
+      return false;
+  }
 
 
   onSubmit(){
     console.log(this.loginForm.value);
      
   }
+
+  // login(){
+  //   let userName
+  // }
   
 }
