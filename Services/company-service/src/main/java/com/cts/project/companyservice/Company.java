@@ -19,24 +19,29 @@ public class Company implements Serializable{
 	private String companyName;
 	private String ceoName;
 	private String boardMember;
+	
+	private String[] listed_in_stock_exchanges;
+	private String sector;
 	private int turnOver;
 	private String briefDescription;
-	private LocalDate ipoDate;
+	private String stock_code;
 	
 	public Company() {
 		
 	}
-
-	public Company(Integer id, String companyName, String ceoName, String boardMember, int turnOver,
-			String briefDescription, LocalDate ipoDate) {
+	public Company(Integer id, String companyName, String ceoName, String boardMember,
+			String[] listed_in_stock_exchanges, String sector, int turnOver, String briefDescription,
+			String stock_code) {
 		super();
 		this.id = id;
 		this.companyName = companyName;
 		this.ceoName = ceoName;
 		this.boardMember = boardMember;
+		this.listed_in_stock_exchanges = listed_in_stock_exchanges;
+		this.sector = sector;
 		this.turnOver = turnOver;
 		this.briefDescription = briefDescription;
-		this.ipoDate = ipoDate;
+		this.stock_code = stock_code;
 	}
 
 	public Integer getId() {
@@ -87,19 +92,40 @@ public class Company implements Serializable{
 		this.briefDescription = briefDescription;
 	}
 
-	public LocalDate getIpoDate() {
-		return ipoDate;
+
+	public String[] getListed_in_stock_exchanges() {
+		return listed_in_stock_exchanges;
 	}
 
-	public void setIpoDate(LocalDate ipoDate) {
-		this.ipoDate = ipoDate;
+	public void setListed_in_stock_exchanges(String[] listed_in_stock_exchanges) {
+		this.listed_in_stock_exchanges = listed_in_stock_exchanges;
+	}
+
+	public String getSector() {
+		return sector;
+	}
+
+	public void setSector(String sector) {
+		this.sector = sector;
+	}
+
+	public String getStock_code() {
+		return stock_code;
+	}
+
+	public void setStock_code(String stock_code) {
+		this.stock_code = stock_code;
 	}
 
 	@Override
 	public String toString() {
-		return "Company [idNumber=" + id + ", companyName=" + companyName + ", ceoName=" + ceoName
-				+ ", boardMember=" + boardMember + ", turnOver=" + turnOver + ", briefDescription=" + briefDescription
-				+ ", ipoDate=" + ipoDate + "]";
+		return "Company [id=" + id + ", companyName=" + companyName + ", ceoName=" + ceoName + ", boardMember="
+				+ boardMember + ", listed_in_stock_exchanges=" + listed_in_stock_exchanges + ", sector=" + sector
+				+ ", turnOver=" + turnOver + ", briefDescription=" + briefDescription + ", stock_code=" + stock_code
+				+ "]";
 	}
+
+
+
 	
 }

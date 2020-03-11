@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HomeService } from './home.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { User } from './models/user';
 
 
 const url = "http://localhost:8765/user-service/login";
@@ -25,11 +26,12 @@ export class AuthService {
     //send the request
     return this.httpClient.get(url,{headers}).pipe(
       //success function
-      map(successData => {
+      map((successData:User)=> {
         console.log("success")
         sessionStorage.setItem("username",username);
         //save the token
         sessionStorage.setItem("token",authenticationToken);
+        sessionStorage.setItem("role",successData.role);
         return successData;
       }),
 
@@ -46,6 +48,15 @@ export class AuthService {
       return sessionStorage.getItem("token");
     return null;
   }
+  isAdmin():boolean
+  {
+    let v=sessionStorage.getItem('role');
+    if(v=="ROLE_ADMIN"){
+      return true;
+    }else{
+      return false;
+    }
+  }
   isUserLoggedIn(): boolean {
     let user = sessionStorage.getItem('username');
     if (user == null)
@@ -58,7 +69,8 @@ export class AuthService {
   }
   logout() {
     sessionStorage.removeItem('username');
-    sessionStorage.removeItem("token")
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("role")
   }
   // getUserDetails(): string {
   //   let user = sessionStorage.getItem('usename');

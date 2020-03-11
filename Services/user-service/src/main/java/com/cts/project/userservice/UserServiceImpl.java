@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -58,12 +59,26 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User getUserById(int id) {
 		Optional<User> user=userRepo.findById(id);
-		return user.get();
+		return user.orElse(null);
 	}
 
 	@Override
 	public User getUserByCodes(long code) {
 		User user=userRepo.findByCode(code);
+		return user;
+	}
+
+	@Override
+	public UserDTO getByUsernameAndPassword(String userName, String password) {
+		User user=userRepo.findByUserNameAndPassword(userName, password);
+		UserDTO userDTO=new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
+	}
+
+	@Override
+	public User getUserByUserName(String userName) {
+		User user=userRepo.findByUserName(userName);
 		return user;
 	}
 

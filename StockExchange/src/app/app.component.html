@@ -29,10 +29,10 @@
                             <li class="nav-item active">
                                 <a class="nav-link" [routerLink]="['/home']"><i class="fa fa-home"></i> Home</a>
                             </li>                                                                                   
-                            <li class="nav-item" *ngIf="!homeService.LoggedIn()">
+                            <li class="nav-item" *ngIf="!authService.isUserLoggedIn()">
                                <a class="nav-link" [routerLink]="['/about-us']"><i class="fa fa-user"></i> About Us</a>
                             </li>
-                            <li class="nav-item" *ngIf="!homeService.LoggedIn()">
+                            <li class="nav-item" *ngIf="!authService.isUserLoggedIn()">
                                <a class=" nav-link" [routerLink]="['/contact-us']"><i class="fa fa-phone fa-rotate-90" aria-hidden="true"></i>Contact Us</a>
                             </li>
                             <!-- <li class="nav-item" *ngIf="!homeService.LoggedIn()">
@@ -41,22 +41,22 @@
                             <li class="nav-item" *ngIf="!homeService.LoggedIn()">
                                <a class="nav-link" [routerLink]="['/signup']">Sign Up</a>
                             </li> -->
-                            <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                            <li *ngIf="!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/profile']">Profile</a>
                              </li>
-                            <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                            <li *ngIf="!!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/user-companylist']">Company List</a>
                              </li>
-                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                             <li *ngIf="!!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/user-ipolist']">IPO List</a>
                              </li>
-                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                             <li *ngIf="!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/compare-company']">Compare Company</a>
                              </li>
-                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                             <li *ngIf="!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/compare-sector']">Compare Sector</a>
                              </li>
-                             <li *ngIf="homeService.LoggedIn()" class="nav-item">
+                             <li *ngIf="!admin&&loggedIn" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/logout']">Log out</a>
                              </li>
 

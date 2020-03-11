@@ -1,8 +1,14 @@
 package com.cts.project.usercontroller;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cts.project.userservice.User;
+import com.cts.project.userservice.UserDTO;
 import com.cts.project.userservice.UserRepo;
 import com.cts.project.userservice.UserService;
 
@@ -34,11 +41,32 @@ public class UserController {
 	@Autowired
 	JavaMailSender jms;
 	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@GetMapping(value="/login")
-  	public ResponseEntity<?> login()
+  	public ResponseEntity<?> login(HttpServletRequest request)
   	{
-  		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
-  	}
+  		String authorize=request.getHeader("Authorization");
+  		logger.info("Login with token -->{}",authorize);
+  		String username=null;
+  		String password=null;
+  		if(authorize!= null && authorize.startsWith("Basic")) {
+  			String base64Credentials = authorize.substring("Basic".length()).trim();
+  			byte[] credDecoded=Base64.getDecoder().decode(base64Credentials);
+  			String credentials = new String(credDecoded,StandardCharsets.UTF_8);
+  			username=credentials.split(":")[0];
+  			password=credentials.split(":")[1];
+  		}	
+  			try {
+				UserDTO user=userService.getByUsernameAndPassword(username, password);
+				logger.info("Logged in username --> {}",username);
+				return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
+			} catch (Exception e) {
+				System.out.println(e.getStackTrace());
+				logger.info("Unauthorized Access :Stack Trace --> {}",e.getStackTrace().toString());
+				return new ResponseEntity<String>("No User Found", HttpStatus.NOT_FOUND);
+			}
+  		}
 
 	@GetMapping("/user/activate/{code}")
 	public User getUserByCode(@PathVariable long code) {
@@ -78,6 +106,17 @@ public class UserController {
 	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserWithId(@PathVariable int id){
 		User user=userService.getUserById(id);
-		return new ResponseEntity<User>(user,HttpStatus.CREATED);
+		if(user!=null) {
+			return new ResponseEntity<User>(user,HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+		}
+		
 	}
+//	@GetMapping("/user/{userName}")
+//	public ResponseEntity<?> getUserWithUserName(@PathVariable String userName){
+//		User user=userService.getUserByUserName(userName);
+//		return new ResponseEntity<User>(user,HttpStatus.CREATED);	
+//	}
 }

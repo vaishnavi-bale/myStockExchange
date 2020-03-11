@@ -19,9 +19,11 @@ export class UpdateCompanyComponent implements OnInit {
       companyName: ['',Validators.required],
       ceoName:['',Validators.required],
       boardMember:['',Validators.required],
+      listed_in_stock_exchanges:['',Validators.required],
+      sector:['',Validators.required],
       turnOver:['',Validators.required],
       briefDescription:['',Validators.required],
-      ipoDate:['',Validators.required]
+      stock_code:['',Validators.required]
     });
   const id = localStorage.getItem('companyId');
     if (+ id > 0) {

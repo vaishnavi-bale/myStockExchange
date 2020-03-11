@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './models/user';
 import { HomeService } from './home.service';
+import { AuthService } from './auth.service';
 // import { getMaxListeners } from 'cluster';
 
 
@@ -11,7 +12,9 @@ import { HomeService } from './home.service';
 })
 export class AppComponent {
 
-  constructor(private homeService:HomeService){}
+  constructor(private homeService:HomeService,private authService:AuthService){}
   title = 'myStockExchange';
+  admin=this.authService.isAdmin();
+  loggedIn=this.authService.isUserLoggedIn();
 
 }

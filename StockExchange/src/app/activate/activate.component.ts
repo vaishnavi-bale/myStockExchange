@@ -27,7 +27,7 @@ activate_user(){
 }
 update_user(){
   let new_user:User = this.user;
-  new_user.active="yes";
+  new_user.active=true;
   this.homeService.updateUser(new_user).subscribe(u => {
     alert("User Activated Successfully")
     this.router.navigate(['/login'])

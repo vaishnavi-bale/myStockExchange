@@ -6,6 +6,7 @@ export class User{
     userName: string;
     password: string;
     code:number;
-    registerStatus:String;
-    active:String;
+    registerStatus:string;
+    active:boolean;
+    role:string;
 }

@@ -12,10 +12,13 @@ user:User;
   constructor(private homeService:HomeService) { }
 
   ngOnInit() {
-    const c = localStorage.getItem('userId');
-      this.homeService.getUserById(+c).subscribe(data =>{
-        this.user=data;
-    });
+  //   let c = sessionStorage.getItem('userName');
+  //   console.log(c)
+  //   if (+ c > 0) {
+  //     this.homeService.getUserByUserName(+c).subscribe(data=> {
+  //       this.user=data
+  //       console.log("user:"+this.user);
+  //     })
+  // }
   }
-
 }

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   
   ngOnInit() {
     this.loginForm=this.formBuilder.group({
-        name: ['',Validators.required],
+        userName: ['',Validators.required],
         password: ['',Validators.required],
     });
 
@@ -27,31 +27,31 @@ export class LoginComponent implements OnInit {
     })
   }
 
- isValid(){
-   let admin_userName="admin";
-   let admin_password="admin";
-  let userName=this.loginForm.controls.name.value;
-  let password=this.loginForm.controls.password.value;
+//  isValid(){
+//    let admin_userName="admin";
+//    let admin_password="admin";
+//   let userName=this.loginForm.controls.name.value;
+//   let password=this.loginForm.controls.password.value;
 
-   if((userName===admin_userName) && (password===admin_password)){
-     this.router.navigate(['/main']);
-   }else{
-     if(this.login(userName,password)){
-      if(this.homeService.isActivated(this.currentUser)){
-        localStorage.removeItem('userId');
-        localStorage.setItem('userId',this.currentUser.id.toString());
-     this.router.navigate(['/user-main']);
-       }else{
-         alert("Please activate your account to login")
-       }
-     }else{
-       alert("Invalid Username or Password");
-       this.loginForm.reset();
-     }
-   }
- }
+//    if((userName===admin_userName) && (password===admin_password)){
+//      this.router.navigate(['/main']);
+//    }else{
+//      if(this.login(userName,password)){
+//       if(this.homeService.isActivated(this.currentUser)){
+//         localStorage.removeItem('userId');
+//         localStorage.setItem('userId',this.currentUser.id.toString());
+//      this.router.navigate(['/user-main']);
+//        }else{
+//          alert("Please activate your account to login")
+//        }
+//      }else{
+//        alert("Invalid Username or Password");
+//        this.loginForm.reset();
+//      }
+//    }
+//  }
 
-  login(userName:string,password:string){
+  loginUser(userName:string,password:string){
       for(let user of this.users ){
         if((userName===user.userName) && (password===user.password)){
              this.currentUser=user;
@@ -61,14 +61,34 @@ export class LoginComponent implements OnInit {
       return false;
   }
 
-
-  onSubmit(){
-    console.log(this.loginForm.value);
-     
+  login(){
+    let userName=this.loginForm.controls.userName.value;
+    let password=this.loginForm.controls.password.value;
+    const result$=this.authService.authenticate(userName,password);
+    result$.subscribe(data=>{
+      console.log(data);
+      sessionStorage.setItem('userId',data.id.toString());
+    if(data.role=='ROLE_ADMIN'){
+      this.router.navigate(['/main']);
+    }
+    else{
+      this.router.navigate(['/user-main']);
+    }
+    })
+    // if(this.loginUser(userName,password)){
+    // if(this.homeService.isActivated(this.currentUser)){
+    //   sessionStorage.removeItem('userId');
+    //   sessionStorage.setItem('userId',this.currentUser.id.toString());
+    //   this.authService.authenticate(userName,password).subscribe(u => {
+    //     this.currentUser=u;
+    //     if(this.currentUser.role=="ROLE_ADMIN"){
+    //       this.router.navigate(['/main'])
+    //     }else{
+    //       this.router.navigate(['/user-main'])
+    //     }
+        
+    //   });
+    // }
+    // }
   }
-
-  // login(){
-  //   let userName
-  // }
-  
 }

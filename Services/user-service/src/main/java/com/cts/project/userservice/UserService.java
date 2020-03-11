@@ -15,4 +15,8 @@ public interface UserService {
 	public User getUserById(int id);
 	
 	public User getUserByCodes(long code);
+	
+	public UserDTO getByUsernameAndPassword(String userName,String password);
+	
+	public User getUserByUserName(String userName);
 }

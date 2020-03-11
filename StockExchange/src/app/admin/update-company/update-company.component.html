@@ -25,8 +25,9 @@
 
         <div class="col-1"></div>
         <div class="col-7 mt-4 p-5 shadow bg-white rounded">
-            <h3 class="v">Create New Company</h3>
-
+            <div class="text-center">
+            <h3 class="v">Update Company</h3>
+        </div>
             <form action="" [formGroup]="updateCompany">
                 <div class="row">
                     <div class="form-group col">
@@ -40,35 +41,51 @@
                             formControlName="companyName" placeholder="Company Name">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="ceoName" class="h5">CEO Name : </label>
-                    <input type="text" id="ceo_name" class="form-control" formControlName="ceoName"
-                        placeholder="CEO Name">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="ceoName" class="h5">CEO Name : </label>
+                        <input type="text" id="ceo_name" class="form-control" formControlName="ceoName"
+                            placeholder="CEO Name">
+                    </div>
+                    <div class="form-group col">
+                        <label for="board_mem" class="h5">Board Members : </label>
+                        <input type="text" id="board_mem" class="form-control"
+                            formControlName="boardMember" placeholder="Board Members">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="board_mem" class="h5">Board Members : </label>
-                    <input type="text" id="board_mem" class="form-control" formControlName="boardMember"
-                        placeholder="Board Members">
-                </div>
+                <label for="listed-in-stock-exchanges" class="h5">Listed in Stock Exchanges:</label>
+      <small class="text-info"> Hold [Ctrl] to Select Multiple Stock Exchanges</small>
+      <select class="form-control" name="listed-in-stock-exchanges" formControlName="listed_in_stock_exchanges" multiple size="2">
+          <option value="bse">BSE</option>
+          <option value="nse">NSE</option>
+      </select>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="sector" class="h5">Sector:</label>
+          <input type="text" name="sector" formControlName="sector" class="form-control" placeholder="Name of Sector">
+        </div>
+                    <div class="form-group col">
+                        <label for="turnOver" class="h5">TurnOver: </label>
+                        <input type="number" id="turnOver" class="form-control" formControlName="turnOver"
+                            placeholder="Turn Over">
+                    </div>
+    </div>
+    <div class="form-group">
+        <label for="description" class="h5">Brief Description : </label>
+        <textarea class="form-control mb-4" type="text" placeholder="Brief Description"
+            rows="3" formControlName="briefDescription"></textarea>
+    </div>
                 <div class="form-group">
-                    <label for="turnOver" class="h5">TurnOver: </label>
-                    <input type="number" id="turnOver" class="form-control" formControlName="turnOver"
-                        placeholder="Turn Over">
-                </div>
-                <div class="form-group">
-                    <label for="description" class="h5">Brief Description : </label>
-                    <input type="textarea" class="form-control" id="desp"
-                        formControlName="briefDescription" placeholder="Brief Description">
-                </div>
-                <div class="form-group">
-                    <label for="ipo_date" class="h5">IPO Date : </label>
-                    <input type="date" id="ipo_date" class="form-control" formControlName="ipoDate"
-                        placeholder="IPO Date">
+                    <label for="stock_code" class="h5">Stock Code:</label>
+                    <input type="text" name="stock_code" formControlName="stock_code" class="form-control mb-4" placeholder="Unique Stock Code">
                 </div>
 
-                <button type="submit" class="btn admin" (click)="updateTheCompany()"
-                    [disabled]="!updateCompany.valid">Update</button>
-                <button type="submit" class="btn admin float-right" (click)="back()">Back</button>
+                <button type="submit" class="btn admin " (click)="updateTheCompany()"
+                    [disabled]="!updateCompany.valid">Save</button>
+                <button type="submit" class="btn admin float-right" (click)="back()"
+                >Back</button>    
             </form>
         </div>
     </div>
