@@ -23,6 +23,7 @@ export class ManageExchangeComponent implements OnInit {
    addStocks(){
     this.stockExchangeService.saveStockExchange(this.stockExchange.value).subscribe(data=>{
        alert('Stock Exchange Inserted Successfully.');
+       this.router.navigate(['stock-list'])
        })
       }
   back(){

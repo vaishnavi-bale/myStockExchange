@@ -17,8 +17,8 @@
    <!-- <div class="col-1"></div> -->
    <div class="col mb-5">
 
-       <h3 class="v text-center">List Of Companies</h3>
-       <div class="table-responsive">
+       <h3 class="v text-center mt-3">List Of IPO's</h3>
+       <div class="table-responsive mt-3">
        <table class="table table-striped">
         <thead>
             <tr>
@@ -31,7 +31,7 @@
                 <th class="h5">Remarks</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="h6">
             <tr *ngFor="let ipo of ipodetails" class="s">
                 <td>{{ipo.id}}</td>
                 <td>{{ipo.name}}</td>

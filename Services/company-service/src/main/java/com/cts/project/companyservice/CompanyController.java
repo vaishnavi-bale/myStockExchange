@@ -65,6 +65,26 @@ public class CompanyController {
 		}
 	}
 	
+	@GetMapping("/company/pattern/{pattern}")
+	public ResponseEntity<?> getCompanyByPattern(@PathVariable String pattern){
+		List<Company> company_list=companyService.getCompanyContaining(pattern);
+		if(company_list.size()>0) {
+			return new ResponseEntity<List<Company>>(company_list, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>("No Companies", HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@GetMapping("/company/name/{companyName}")
+	public ResponseEntity<?> getCompanyByName(@PathVariable String companyName){
+		Company company=companyService.getCompanyByCompanyName(companyName);
+		if(company!=null) {
+			return new ResponseEntity<Company>(company, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>("No Company with specified name", HttpStatus.NOT_FOUND);
+		}
+	}
+	
 //	@Autowired
 //	CompanyRepo companyRepo;
 //	

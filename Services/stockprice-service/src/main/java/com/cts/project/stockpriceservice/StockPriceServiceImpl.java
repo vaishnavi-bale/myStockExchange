@@ -141,4 +141,9 @@ public class StockPriceServiceImpl implements StockPriceService{
 				duplicates);
 	}
 
+    @Override	
+	public List<StockPriceOnPeriod> getCompanyStockPriceBetween(String companyCode,String stockExchange,LocalDate startDate, LocalDate endDate,String periodicity){
+		return stockPriceRepo.getStockPriceBetweenDates(companyCode, stockExchange, startDate, endDate);
+	}
 }
+

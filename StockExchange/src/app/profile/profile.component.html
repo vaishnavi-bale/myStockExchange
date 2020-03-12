@@ -1,47 +1,19 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
-        <div class="text-center">
-        <h3 class="v">Profile</h3>
-        </div>
-        <div class="col-lg-9">
-            <img src="" alt="user img" width="200px" height="200px">
-        </div>
-       <div class="col">
-            User Name:
+       
+        <div class="col-3"></div>
+        <div class="col-6 mt-4 p-5 mb-5 shadow bg-white rounded">
+            <div class="text-center v mb-3">Profile
+                <div class="float-right">
+                    <button class="btn btn-success" (click)="updateUser(user)"><i class="fa fa-pencil"></i></button>
+                </div>
+            </div>
+           
+           <div class="h5">Id:{{user.id}}</div>
+           <div class="h5">Full Name:{{user.fullName}}</div>
+           <div class="h5">User Name:{{user.userName}}</div>
+           <div class="h5">Email Id:{{user.email}}</div>
+           <div class="h5">Phone Number:{{user.phoneNumber}}</div>
         </div>
     </div>
-</div> -->
-
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<br><br>
-<div class="container-fluid well span8">
-	<div class="row-fluid">
-        <div class="span2" >
-		    <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
-        </div>
-        
-        <div class="span8">
-            <h3>{{user.fullName}}</h3>
-            <h6>{{user.userName}}</h6>
-            <h6>{{user.email}}</h6>
-            <h6>{{user.phoneNumber}}</h6>
-        </div>
-        
-        <div class="span2">
-            <div class="btn-group">
-                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                    Action 
-                    <span class="icon-cog icon-white"></span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-                    <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-                </ul>
-            </div>
-        </div>
-</div>
 </div>

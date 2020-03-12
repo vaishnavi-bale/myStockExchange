@@ -26,6 +26,7 @@ export class IpoDetailsComponent implements OnInit {
   AddIpo(){
     this.ipoService.saveIpo(this.ipoDetails.value).subscribe(data => {
       alert("Ipo Details entered successfully");
+      this.router.navigate(['ipo-table'])
     })
   }
   back(){

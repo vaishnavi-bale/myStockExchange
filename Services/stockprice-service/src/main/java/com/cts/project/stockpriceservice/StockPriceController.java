@@ -1,6 +1,7 @@
 package com.cts.project.stockpriceservice;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -71,5 +72,14 @@ public class StockPriceController {
 		}else {
 			return new ResponseEntity<String>("Wrong file extension. The file should be .xls or an .xlsx file.", HttpStatus.BAD_REQUEST);
 		}
+	}
+	
+	@GetMapping(value = "/stockPrices/companyStockPriceBetween/{companyCode}/{stockExchange}/{startDate}/{endDate}/{periodicity}", 
+			produces = "application/json")
+	public ResponseEntity<?> getCompanyStockPricePerDayBetween(@PathVariable String companyCode,
+			@PathVariable String stockExchange, @PathVariable String startDate, @PathVariable String endDate,
+			@PathVariable String periodicity) {
+		return new ResponseEntity<List<StockPriceOnPeriod>>(stockPriceService.getCompanyStockPriceBetween(companyCode,
+				stockExchange, LocalDate.parse(startDate), LocalDate.parse(endDate), periodicity), HttpStatus.OK);
 	}
 }

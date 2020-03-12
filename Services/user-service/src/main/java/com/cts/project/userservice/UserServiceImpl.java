@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	JavaMailSender jms;
+	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public User insert(User user) {
@@ -31,7 +35,7 @@ public class UserServiceImpl implements UserService{
 			sm.setText(" Hello "+user.getUserName()+"\n Account created!! \n click on <a href='http://localhost:4200/user/activate?code=" + user.getCode()
 					+ "'>Click</a>");
 			jms.send(sm);
-			System.out.println("Sending mail...");
+			logger.info("Sending email...");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

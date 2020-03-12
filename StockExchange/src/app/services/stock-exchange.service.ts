@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StockExchange } from '../models/stock-exchange';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StockExchangeService {
-  httpUrl='http://localhost:8003/stockexchange/';
+  httpUrl=environment.url+"stock-exchange-service/stockexchange/";
   constructor(private httpClient:HttpClient) { }
   getAllStockExchange(): Observable<StockExchange[]>{
     return this.httpClient.get<StockExchange[]>(this.httpUrl);

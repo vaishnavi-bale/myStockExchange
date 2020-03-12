@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6 mt-5">
+<div class="form-group">
+  <i class="fa fa-search"></i><input type="text" class="form-control" (input)="onInputChange($event)" (change)="selectCompany($event)" list="suggestedCompanies" placeholder="Search Company Here" autofocus>
+    <datalist id="suggestedCompanies">
+      <option *ngFor="let company of companies" [value]="company.companyName">{{company.companyName}}</option>
+    </datalist>
+  </div>
+        <div class=" mt-4 p-5 mb-5 shadow bg-white rounded" *ngIf="selected_company">
+          <div class="row">
+            <div class="col v">Company Details</div>
+          <div class="col-2"></div>
+          <div class="col-9">
+            <div class="h5">ID:{{selected_company.id}}</div>
+            <div class="h5">Company Name:{{selected_company.companyName}}</div>
+            <div class="h5">CEO Name:{{selected_company.ceoName}}</div>
+            <div class="h5">Board Members:{{selected_company.boardMember}}</div>
+            <div class="h5">Listed In Stock Exchanges:{{selected_company.listed_in_stock_exchanges}}</div>
+            <div class="h5">Sector:{{selected_company.sector}}</div>
+            <div class="h5">Turn Over:{{selected_company.turnOver}}</div>
+            <div class="h5">Brief Description:{{selected_company.briefDescription}}</div>
+            <div class="h5">Stock Code:{{selected_company.stock_code}}</div>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>
+</div>

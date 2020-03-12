@@ -18,7 +18,7 @@
     <div class="col-lg-6 col-md-6 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
         <h3 class="v text-center">Compare Company</h3>
         <div>
-        <form [formGroup]="compareCompany">
+        <form [formGroup]="compareCompany" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="form-group col">
                     <label for="selectCompany" class="h5">Select Company:</label>
@@ -33,19 +33,30 @@
             </div>
             <div class="row">
                 <div class="form-group col">
-                    <label for="companyName" class="h5">Company Name:</label>
-                    <input type="text" class="form-control mb-3" formControlName="companyName"
+                    <label for="companyName" class="h5">Company 1:</label>
+                    <input type="text" class="form-control mb-3" formControlName="companyName1"
                         placeholder="Company Name">
                 </div>
                 <div class="form-group col">
+                    <label for="companyName" class="h5">Company 2:</label>
+                    <input type="text" class="form-control mb-3" formControlName="companyName2"
+                        placeholder="Company Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
                     <label for="period" class="h5">From period:</label>
-                    <input type="text" class="form-control mb-3" formControlName="period" placeholder="From Period" disabled>
+                    <input type="date" class="form-control mb-3" formControlName="from_period" placeholder="From Period">
+                </div>
+                <div class="form-group col">
+                    <label for="period" class="h5">To period:</label>
+                    <input type="date" class="form-control mb-3" formControlName="to_period" placeholder="From Period">
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col">
+                <!-- <div class="col">
                     <input type="reset" value="Add Company +" class="btn btn-lg admin px-5">
-                </div>
+                </div> -->
                 <div class="col">
                     <input type="submit" value="Generate Maps" class="btn btn-lg admin px-5">
                 </div>

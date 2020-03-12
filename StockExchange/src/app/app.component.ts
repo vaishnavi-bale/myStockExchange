@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private homeService:HomeService,private authService:AuthService){}
   title = 'myStockExchange';
-  admin=this.authService.isAdmin();
+   admin=this.authService.isAdmin();
   loggedIn=this.authService.isUserLoggedIn();
-
 }
+ 

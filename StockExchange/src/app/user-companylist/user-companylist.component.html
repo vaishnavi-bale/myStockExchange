@@ -26,20 +26,24 @@
                     <th class="h5">Company Name</th>
                     <th class="h5">CEO Name</th>
                     <th class="h5">Board Members</th>
+                    <th class="h5">Listed In Stock Exchanges</th>
+                    <th class="h5">Sector</th>
                     <th class="h5">TurnOver</th>
                     <th class="h5">Brief Description</th>
-                    <th class="h5">IPO Date</th>
+                    <th class="h5">Sector Code</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="h6">
                 <tr *ngFor="let company of company" class="s">
                     <td>{{company.id}}</td>
                     <td>{{company.companyName}}</td>
                     <td>{{company.ceoName}}</td>
                     <td>{{company.boardMember}}</td>
+                    <td>{{company.listed_in_stock_exchanges}}</td>
+                    <td>{{company.sector}}</td>
                     <td>{{company.turnOver}}</td>
                     <td>{{company.briefDescription}}</td>
-                    <td>{{company.ipoDate}}</td>
+                    <td>{{company.stock_code}}</td>
                 </tr>
             </tbody>
         </table>

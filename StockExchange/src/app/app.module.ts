@@ -34,6 +34,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { ChartsComponent } from './charts/charts.component';
 import {HighchartsChartComponent} from 'highcharts-angular';
 import { ProfileComponent } from './profile/profile.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -67,12 +70,15 @@ import { ProfileComponent } from './profile/profile.component';
     ChartsComponent,
     HighchartsChartComponent,
     ProfileComponent,
+    UpdateProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

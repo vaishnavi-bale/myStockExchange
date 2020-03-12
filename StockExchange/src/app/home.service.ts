@@ -3,12 +3,13 @@ import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './models/user';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
-  httpUrl='http://localhost:8765/user-service/user/';
+  httpUrl=environment.url+"user-service/user/";
   code: number;
   user: User;
   constructor(private httpClient:HttpClient,private router:Router) { }
@@ -66,7 +67,7 @@ export class HomeService {
     }
 
     getUserByUserName(userName:String):Observable<User>{
-      return this.httpClient.get<User>(this.httpUrl+'/'+userName)
+      return this.httpClient.get<User>(this.httpUrl+"username/"+userName)
     }
     // serviceActivation(obj){
     //   return this.httpClient.put(`http://localhost:8002/activate`,obj)

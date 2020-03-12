@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+<div class="col-3"></div>
+    <div class="col-lg-7 col-md-5 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
+
+      <h3 class="text-center v">Update Profile</h3>
+
+      <form [formGroup]="updateProfile" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col">
+            <label for="id" class="h5">ID Number : </label>
+            <input type="number" class="form-control" formControlName="id" placeholder="Id Number">
+          </div>
+          <div class="form-group col">
+            <label for="Full Name" class="h5">Full Name : </label>
+            <input type="text" class="form-control" formControlName="fullName" placeholder="Full Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Email" class="h5">Email : </label>
+          <input type="email" id="email" class="form-control" formControlName="email"
+            placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="Phone" class="h5">Phone Number : </label>
+          <input type="number" id="phone" class="form-control" formControlName="phoneNumber"
+            placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+          <label for="User Name" class="h5">User Name : </label>
+          <input type="text" class="form-control" id="user_name" formControlName="userName"
+            placeholder="User Name">
+        </div>
+        <div class="form-group">
+          <label for="password" class="h5">Password : </label>
+          <input type="password" id="pass" class="form-control" formControlName="password"
+            placeholder="Password">
+        </div>
+
+        <button class="btn admin" type="submit" (click)="updateTheUser()" [disabled]="!updateProfile.valid">Update
+          Profile</button>
+          <button class="btn admin float-right" type="submit" (click)="back()" >Back</button>
+      </form>
+    </div>
+  </div>
+</div>

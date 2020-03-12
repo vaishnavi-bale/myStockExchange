@@ -114,9 +114,9 @@ public class UserController {
 		}
 		
 	}
-//	@GetMapping("/user/{userName}")
-//	public ResponseEntity<?> getUserWithUserName(@PathVariable String userName){
-//		User user=userService.getUserByUserName(userName);
-//		return new ResponseEntity<User>(user,HttpStatus.CREATED);	
-//	}
+	@GetMapping("/user/username/{userName}")
+	public ResponseEntity<?> getUserWithUserName(@PathVariable String userName){
+		User user=userService.getUserByUserName(userName);
+		return new ResponseEntity<User>(user,HttpStatus.CREATED);	
+	}
 }

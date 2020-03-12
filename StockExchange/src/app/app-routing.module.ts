@@ -29,6 +29,8 @@ import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -36,7 +38,7 @@ const routes: Routes = [
 { path: 'login', component: LoginComponent},
 { path: 'signup', component: SignupComponent},
 { path:'home',component: HomeComponent},
-{path : 'main',component: MainComponent},
+{path : 'main',component: MainComponent,canActivate:[LoginGuard]},
 {path : 'import-data',component:ImportDataComponent},
 {path: 'company',component:CompanyComponent},
 { path :'update',component:UpdateComponent},
@@ -58,7 +60,10 @@ const routes: Routes = [
 {path:'user/activate',component:ActivateComponent},
 {path:'logout',component:LogoutComponent},
 {path:'chart',component:ChartsComponent},
+{path:'update-profile',component:UpdateProfileComponent},
 {path:'profile',component:ProfileComponent},
+{path:'profile',component:ProfileComponent},
+{path:'search',component:SearchComponent},
 { path: ' ',component:AppComponent}
 ];
 

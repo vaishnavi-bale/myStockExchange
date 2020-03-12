@@ -13,4 +13,8 @@ public interface CompanyService {
 	public void deleteById(int id);
 	
 	public Company getCompanyById(int id);
+	
+	public List<Company> getCompanyContaining(String pattern);
+	
+	public Company getCompanyByCompanyName(String companyName);
 }
