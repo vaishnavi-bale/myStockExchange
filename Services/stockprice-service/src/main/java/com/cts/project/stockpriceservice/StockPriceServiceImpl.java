@@ -79,7 +79,8 @@ public class StockPriceServiceImpl implements StockPriceService{
 							.atZone(ZoneId.of("+05:30")).toLocalDate();
 					startDate = date.isBefore(startDate) ? date : startDate;
 					endDate = date.isAfter(endDate) ? date : endDate;
-					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
+					LocalTime time = row.getCell(currentCellNum++).getDateCellValue().toInstant()
+							.atZone(ZoneId.of("+05:30")).toLocalTime();
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
 						StockPrice stockPriceEntity = new StockPrice(0, companyCode, stockExchangeName, stockPrice, date, time);
 						stockPricesEntities.add(stockPriceEntity);
@@ -115,7 +116,8 @@ public class StockPriceServiceImpl implements StockPriceService{
 							.atZone(ZoneId.of("+05:30")).toLocalDate();
 					startDate = date.isBefore(startDate) ? date : startDate;
 					endDate = date.isAfter(endDate) ? date : endDate;
-					LocalTime time = LocalTime.parse(row.getCell(currentCellNum++).getStringCellValue().trim());
+					LocalTime time =  row.getCell(currentCellNum++).getDateCellValue().toInstant()
+							.atZone(ZoneId.of("+05:30")).toLocalTime();
 					if (!stockPriceRepo.getIfAlreadyExists(companyCode, stockExchangeName, date, time).isPresent()) {
 						StockPrice stockPriceEntity = new StockPrice(0, companyCode, stockExchangeName, stockPrice, date, time);
 						stockPricesEntities.add(stockPriceEntity);
@@ -142,7 +144,7 @@ public class StockPriceServiceImpl implements StockPriceService{
 	}
 
     @Override	
-	public List<StockPriceOnPeriod> getCompanyStockPriceBetween(String companyCode,String stockExchange,LocalDate startDate, LocalDate endDate,String periodicity){
+	public List<StockPriceOnPeriod> getCompanyStockPriceBetween(String companyCode,String stockExchange,LocalDate startDate, LocalDate endDate){
 		return stockPriceRepo.getStockPriceBetweenDates(companyCode, stockExchange, startDate, endDate);
 	}
 }

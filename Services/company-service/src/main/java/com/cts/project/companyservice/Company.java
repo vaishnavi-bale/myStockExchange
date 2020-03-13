@@ -24,14 +24,14 @@ public class Company implements Serializable{
 	private String sector;
 	private int turnOver;
 	private String briefDescription;
-	private String stock_code;
+	private String code;
 	
 	public Company() {
 		
 	}
 	public Company(Integer id, String companyName, String ceoName, String boardMember,
 			String[] listed_in_stock_exchanges, String sector, int turnOver, String briefDescription,
-			String stock_code) {
+			String code) {
 		super();
 		this.id = id;
 		this.companyName = companyName;
@@ -41,7 +41,7 @@ public class Company implements Serializable{
 		this.sector = sector;
 		this.turnOver = turnOver;
 		this.briefDescription = briefDescription;
-		this.stock_code = stock_code;
+		this.code = code;
 	}
 
 	public Integer getId() {
@@ -109,19 +109,19 @@ public class Company implements Serializable{
 		this.sector = sector;
 	}
 
-	public String getStock_code() {
-		return stock_code;
+	public String getCode() {
+		return code;
 	}
 
-	public void setStock_code(String stock_code) {
-		this.stock_code = stock_code;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override
 	public String toString() {
 		return "Company [id=" + id + ", companyName=" + companyName + ", ceoName=" + ceoName + ", boardMember="
 				+ boardMember + ", listed_in_stock_exchanges=" + listed_in_stock_exchanges + ", sector=" + sector
-				+ ", turnOver=" + turnOver + ", briefDescription=" + briefDescription + ", stock_code=" + stock_code
+				+ ", turnOver=" + turnOver + ", briefDescription=" + briefDescription + ", code=" + code
 				+ "]";
 	}
 

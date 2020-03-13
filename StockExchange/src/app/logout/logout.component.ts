@@ -9,13 +9,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
-
+logout:boolean;
   constructor(private router:Router,private authService:AuthService) { }
 
   ngOnInit() {
    this.authService.logout();
-   alert("Logged out Successfully")
-    this.router.navigate(['/login'])
+   this.logout=true;
+    // this.router.navigate(['/login'])
   }
 
 }

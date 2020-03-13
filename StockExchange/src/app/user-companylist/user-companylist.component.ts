@@ -19,4 +19,8 @@ export class UserCompanylistComponent implements OnInit {
       })
   }
 
+  search(){
+    this.router.navigate(['/search']);
+  }
+
 }

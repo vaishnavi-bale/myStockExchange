@@ -16,8 +16,13 @@
     </div> -->
     <!-- <div class="col-1"></div> -->
     <div class="col mb-5">
-
-        <h3 class="v text-center mt-3">List Of Companies</h3>
+        <div class="float-right mt-3">
+            <button class="btn admin" (click)="search()"><i class="fa fa-search"></i> Search Company</button>
+        </div>
+        <div>
+        <h3 class="v text-center">List Of Companies</h3>
+        
+    </div>
         <div class="table-responsive mt-3">
         <table class="table table-striped">
             <thead>
@@ -30,7 +35,7 @@
                     <th class="h5">Sector</th>
                     <th class="h5">TurnOver</th>
                     <th class="h5">Brief Description</th>
-                    <th class="h5">Sector Code</th>
+                    <th class="h5">Company Code</th>
                 </tr>
             </thead>
             <tbody class="h6">
@@ -43,7 +48,7 @@
                     <td>{{company.sector}}</td>
                     <td>{{company.turnOver}}</td>
                     <td>{{company.briefDescription}}</td>
-                    <td>{{company.stock_code}}</td>
+                    <td>{{company.code}}</td>
                 </tr>
             </tbody>
         </table>

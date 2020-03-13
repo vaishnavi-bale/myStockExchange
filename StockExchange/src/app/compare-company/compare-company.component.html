@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-    <!-- <div class="col-lg-3 col-sm-3 col-md-3 mt-5">
+        <!-- <div class="col-lg-3 col-sm-3 col-md-3 mt-5">
         <div class="list-group text-center">
             <a class="list-group-item list-group-item-action h5" [routerLink]="['/user-companylist']">Company List
             </a>
@@ -14,55 +14,70 @@
             </a>
         </div>
     </div> -->
-    <div class="col-3"></div>
-    <div class="col-lg-6 col-md-6 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
-        <h3 class="v text-center">Compare Company</h3>
-        <div>
-        <form [formGroup]="compareCompany" (ngSubmit)="onSubmit()">
-            <div class="row">
-                <div class="form-group col">
-                    <label for="selectCompany" class="h5">Select Company:</label>
-                    <input type="text" class="form-control mb-3" formControlName="selectCompany"
-                        placeholder="Enter Company name">
-                </div>
-                <div class="form-group col">
-                    <label for="selectStock" class="h5">Select Stock Exchange:</label>
-                    <input type="text" class="form-control mb-3" formControlName="selectStock"
-                        placeholder="Stock Exchange">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col">
-                    <label for="companyName" class="h5">Company 1:</label>
-                    <input type="text" class="form-control mb-3" formControlName="companyName1"
-                        placeholder="Company Name">
-                </div>
-                <div class="form-group col">
-                    <label for="companyName" class="h5">Company 2:</label>
-                    <input type="text" class="form-control mb-3" formControlName="companyName2"
-                        placeholder="Company Name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col">
-                    <label for="period" class="h5">From period:</label>
-                    <input type="date" class="form-control mb-3" formControlName="from_period" placeholder="From Period">
-                </div>
-                <div class="form-group col">
-                    <label for="period" class="h5">To period:</label>
-                    <input type="date" class="form-control mb-3" formControlName="to_period" placeholder="From Period">
-                </div>
-            </div>
-            <div class="row text-center">
-                <!-- <div class="col">
+        <div class="col-3"></div>
+        <div class="col-lg-6 col-md-6 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
+            <h3 class="v text-center">Compare Company</h3>
+            <div>
+                <form [formGroup]="compareCompany" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="Select Company/Sector">Select Company/Sector</label>
+                            <select class="form-control" id="Select" formControlName="selectCompany"
+                                name="selectCompany">
+                                <option>Company</option>
+                                <option>Sector</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Select stock exchange">Select Stock Exchange</label>
+                            <select class="form-control" id="Select" formControlName="selectStock" name="selectStock">
+                                <option>NSE</option>
+                                <option>BSE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="company name/sector name">Company Name/Sector Name</label>
+                            <select class="form-control" id="cnsn" formControlName="companyName1"
+                                placeholder="Enter company(or) sector name" name="cnsn">
+                                <option value="" selected disabled>Select Company</option>
+                                <option *ngFor="let company of companies" [value]="">
+                                    {{company.code}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="company name/sector name">Company Name/Sector Name Compare To</label>
+                            <select class="form-control" id="ctcnsn" formControlName="companyName2"
+                                placeholder="Enter company(or) sector name Compare To" name="ctcnsn">
+                                <option value="" selected disabled>Select Company</option>
+                                <option *ngFor="let company of companies" [value]="">
+                                    {{company.code}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="period" class="h5">From period:</label>
+                            <input type="date" class="form-control mb-3" formControlName="from_period"
+                                placeholder="From Period">
+                        </div>
+                        <div class="form-group col">
+                            <label for="period" class="h5">To period:</label>
+                            <input type="date" class="form-control mb-3" formControlName="to_period"
+                                placeholder="From Period">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <!-- <div class="col">
                     <input type="reset" value="Add Company +" class="btn btn-lg admin px-5">
                 </div> -->
-                <div class="col">
-                    <input type="submit" value="Generate Maps" class="btn btn-lg admin px-5">
-                </div>
+                        <div class="col">
+                            <input type="submit" value="Generate Maps" class="btn btn-lg admin px-5">
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-    </div>
+        </div>
     </div>
 </div>

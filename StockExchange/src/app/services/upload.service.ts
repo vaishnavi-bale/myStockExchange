@@ -17,7 +17,8 @@ export class UploadService {
     return this.httpClient.post<void>(this.httpUrl+"uploadStockSheet",formData);
   }
 
-  getCompanyStockPricesBetween(companyCode: String,stockExchange:String,fromDate:Date,toDate:Date,periodicity:String):Observable<any[]>{
-    return this.httpClient.get<any[]>(this.httpUrl+"companyStockPriceBetween/"+companyCode+'/'+stockExchange+'/'+fromDate+'/'+toDate+'/'+periodicity);
+  getCompanyStockPricesBetween(companyCode: String,stockExchange:String,startDate:Date,endDate:Date):Observable<any[]>{
+   let url="companyStockPriceBetween/"+companyCode+"/"+stockExchange+"/"+startDate+"/"+endDate;
+    return this.httpClient.get<any[]>(this.httpUrl+url);
   }
 }

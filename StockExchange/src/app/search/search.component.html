@@ -3,8 +3,14 @@
   <div class="col-3"></div>
   <div class="col-6 mt-5">
 <div class="form-group">
-  <i class="fa fa-search"></i><input type="text" class="form-control" (input)="onInputChange($event)" (change)="selectCompany($event)" list="suggestedCompanies" placeholder="Search Company Here" autofocus>
-    <datalist id="suggestedCompanies">
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fa fa-search"></i></span>
+    </div>
+    <input type="text" class="form-control" (input)="onInputChange($event)" (change)="selectCompany($event)" list="suggestedCompanies" placeholder="Search Company Here" autofocus>
+  </div>
+  <!-- <i class="fa fa-search"></i><input type="text" class="form-control" (input)="onInputChange($event)" (change)="selectCompany($event)" list="suggestedCompanies" placeholder="Search Company Here" autofocus> -->
+    <datalist id="suggestedCompanies"> 
       <option *ngFor="let company of companies" [value]="company.companyName">{{company.companyName}}</option>
     </datalist>
   </div>
@@ -21,7 +27,7 @@
             <div class="h5">Sector:{{selected_company.sector}}</div>
             <div class="h5">Turn Over:{{selected_company.turnOver}}</div>
             <div class="h5">Brief Description:{{selected_company.briefDescription}}</div>
-            <div class="h5">Stock Code:{{selected_company.stock_code}}</div>
+            <div class="h5">Stock Code:{{selected_company.code}}</div>
           </div>
         </div>
       </div>

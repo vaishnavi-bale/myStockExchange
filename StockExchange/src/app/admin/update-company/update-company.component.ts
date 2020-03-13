@@ -23,7 +23,7 @@ export class UpdateCompanyComponent implements OnInit {
       sector:['',Validators.required],
       turnOver:['',Validators.required],
       briefDescription:['',Validators.required],
-      stock_code:['',Validators.required]
+      code:['',Validators.required]
     });
   const id = localStorage.getItem('companyId');
     if (+ id > 0) {

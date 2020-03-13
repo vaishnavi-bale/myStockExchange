@@ -7,5 +7,5 @@ export class Company{
     sector:string;
     turnOver: number;
     briefDescription: string;
-    stock_code:string;
+    code:string;
 }

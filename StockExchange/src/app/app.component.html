@@ -48,9 +48,9 @@
                              <li *ngIf="!authService.isAdmin()&&authService.isUserLoggedIn()">
                                 <a class="nav-link" [routerLink]="['/compare-company']">Compare Company</a>
                              </li>
-                             <li *ngIf="!authService.isAdmin()&&authService.isUserLoggedIn()">
+                             <!-- <li *ngIf="!authService.isAdmin()&&authService.isUserLoggedIn()">
                                 <a class="nav-link" [routerLink]="['/compare-sector']">Compare Sector</a>
-                             </li>
+                             </li> -->
                              <li *ngIf="!authService.isAdmin()&&authService.isUserLoggedIn()" class="nav-item">
                                 <a class="nav-link" [routerLink]="['/logout']">Log out</a>
                              </li>

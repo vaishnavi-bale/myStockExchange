@@ -74,12 +74,11 @@ public class StockPriceController {
 		}
 	}
 	
-	@GetMapping(value = "/stockPrices/companyStockPriceBetween/{companyCode}/{stockExchange}/{startDate}/{endDate}/{periodicity}", 
+	@GetMapping(value = "/stockprices/companyStockPriceBetween/{companyCode}/{stockExchange}/{startDate}/{endDate}", 
 			produces = "application/json")
 	public ResponseEntity<?> getCompanyStockPricePerDayBetween(@PathVariable String companyCode,
-			@PathVariable String stockExchange, @PathVariable String startDate, @PathVariable String endDate,
-			@PathVariable String periodicity) {
+			@PathVariable String stockExchange, @PathVariable String startDate, @PathVariable String endDate) {
 		return new ResponseEntity<List<StockPriceOnPeriod>>(stockPriceService.getCompanyStockPriceBetween(companyCode,
-				stockExchange, LocalDate.parse(startDate), LocalDate.parse(endDate), periodicity), HttpStatus.OK);
+				stockExchange, LocalDate.parse(startDate), LocalDate.parse(endDate)), HttpStatus.OK);
 	}
 }

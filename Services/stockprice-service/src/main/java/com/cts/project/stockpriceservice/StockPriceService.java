@@ -20,5 +20,5 @@ public interface StockPriceService {
 	public ImportSummary addStockPricesFromExcelSheet(MultipartFile file) throws Exception;
 
 	List<StockPriceOnPeriod> getCompanyStockPriceBetween(String companyCode, String stockExchange, LocalDate startDate,
-			LocalDate endDate, String periodicity);
+			LocalDate endDate);
 }

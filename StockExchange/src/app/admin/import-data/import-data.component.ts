@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { UploadService } from 'src/app/services/upload.service';
+import bsCustomFileInput from 'bs-custom-file-input'
 
 @Component({
   selector: 'app-import-data',
@@ -18,7 +19,7 @@ export class ImportDataComponent implements OnInit {
     // this.uploadFile=this.formBuilder.group({
     //   file:['']
     // })
-    // bsCustomFileInput.init();
+    bsCustomFileInput.init();
     this.uploadFile=new FormGroup({
       file:new FormControl("",[Validators.required])
     })
@@ -32,6 +33,7 @@ export class ImportDataComponent implements OnInit {
     uploadSheetData.append("stocksSheet",this.file,this.file.name);
     this.uploadService.uploadStocksSheet(uploadSheetData).subscribe(data => {
       console.log("Uploaded");
+      alert('Upload Successfull');
     })
   }
 }

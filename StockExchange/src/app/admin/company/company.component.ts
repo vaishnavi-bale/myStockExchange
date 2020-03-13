@@ -22,7 +22,7 @@ export class CompanyComponent implements OnInit {
       sector:['',Validators.required],
       turnOver:['',Validators.required],
       briefDescription:['',Validators.required],
-      stock_code:['',Validators.required]
+      code:['',Validators.required]
     });
   }
   addCompanyMethod(){

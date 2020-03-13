@@ -11,7 +11,7 @@ import { StockPriceData } from '../models/stockprice-data';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
-   compareData;
+   compareData:any;
    constructor(private stockPriceService: UploadService, private route: ActivatedRoute) { }
    chartOne = Highcharts;
    chartOneOptions: any;
@@ -21,28 +21,28 @@ export class ChartsComponent implements OnInit {
        this.compareData = JSON.parse(this.route.snapshot.queryParams.formData);
        let series: any = []
            let categories: any[] = [];
-           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.selectCompany, this.compareData.selectStock,this.compareData.companyName1, this.compareData.from_period, this.compareData.to_period).subscribe(data => {
+           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.companyName1, this.compareData.selectStock, this.compareData.from_period, this.compareData.to_period).subscribe(data => {
                let companyOneData: any[] = [];
-               data.forEach((stockPrice: StockPriceData) => {
+               data.forEach((stockPrice) => {
                    categories.push(stockPrice.dataPoint);
                    companyOneData.push(stockPrice.dataValue)
                })
                let seriesDataMemberOne = {
-                   name: this.compareData.companies[0].companyCode + " (" + this.compareData.companies[0].stockExchange + ")",
+                   name: this.compareData.companyName1 + " (" + this.compareData.selectStock + ")",
                    data: companyOneData
                }
                series[0] = seriesDataMemberOne;
                this.getFirstDataComplete = true;
            });
-           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.selectCompany, this.compareData.selectStock,this.compareData.companyName1, this.compareData.from_period, this.compareData.to_period).subscribe(data => {
+           this.stockPriceService.getCompanyStockPricesBetween(this.compareData.companyName2, this.compareData.selectStock,this.compareData.from_period, this.compareData.to_period).subscribe(data => {
                let companyTwoData: any[] = [];
-               data.forEach((stockPrice: StockPriceData) => {
+               data.forEach((stockPrice) => {
                    if (categories.includes(stockPrice.dataPoint)) {
                        companyTwoData.push(stockPrice.dataValue)
                    }
                })
                let seriesDataMemberTwo = {
-                   name: this.compareData.companies[1].companyCode + " (" + this.compareData.companies[1].stockExchange + ")",
+                   name: this.compareData.companyName2 + " (" + this.compareData.selectStock + ")",
                    data: companyTwoData
                }
                series[1] = seriesDataMemberTwo;
