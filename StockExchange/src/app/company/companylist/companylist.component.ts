@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CompanylistComponent implements OnInit {
   company:Company[];
+  
   constructor(private companyService:CompanyService,private router: Router) { }
   
   ngOnInit() {

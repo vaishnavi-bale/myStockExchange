@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ActivateComponent implements OnInit {
   code: number;
   user: User;
+  activate:boolean;
   constructor(private homeService:HomeService,private router:Router) { }
 
   ngOnInit() {
@@ -29,8 +30,9 @@ update_user(){
   let new_user:User = this.user;
   new_user.active=true;
   this.homeService.updateUser(new_user).subscribe(u => {
-    alert("User Activated Successfully")
-    this.router.navigate(['/login'])
+    this.activate=true;
+    // alert("User Activated Successfully")
+    // this.router.navigate(['/login'])
   })
 }
 }
