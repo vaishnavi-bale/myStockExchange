@@ -1,46 +1,50 @@
 <div class="container">
   <div class="row">
-      <div class="col-lg-3 col-md-2 col-sm-1"></div>
-      <div class="col-lg-6 col-md-7 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
-        <div class="text-center">
-  <h3 class="v">Sign Up</h3>
-</div>
-<div>
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <!-- <div class="form-group">
-        <label for="id" class="h5">ID Number : </label>
-        <input type="number" class="form-control" formControlName="id" placeholder="Id Number">
-      </div> -->
-      <div class="form-group">
-        <label for="Full Name" class="h5">Full Name : </label>
-        <input type="text" class="form-control" formControlName="fullName" pattern="[A-Za-z\\s]*" placeholder="Full Name" required>
-      </div>
-      <div class="form-group">
-        <label for="Email" class="h5">Email : </label>
-        <input type="email"  class="form-control" formControlName="email" placeholder="Email" required>
-      </div>
-      <div class="form-group">
-        <label for="Phone" class="h5">Phone Number : </label>
-        <input type="text"  class="form-control" formControlName="phoneNumber"
-          placeholder="Phone Number" minlength="10" maxlength="10" sixe="10" pattern="[0-9]*" required>
-      </div>
-      <div class="form-group">
-        <label for="User Name" class="h5">User Name : </label>
-        <input type="text" class="form-control" formControlName="userName"
-          placeholder="User Name" required>
-      </div>
-      <div class="form-group">
-        <label for="password" class="h5">Password: </label>
-        <input type="password" class="form-control" formControlName="password"
-          placeholder="Password" required>
-      </div>
+    <div class="col-lg-3 col-md-2 col-sm-1"></div>
+    <div class="col-lg-6 col-md-7 col-sm-4 mt-4 p-5 mb-5 shadow bg-white rounded">
+      <div class="text-center">
 
-      <button type="submit" class="btn admin" (click)="addUserMethod()"
-        [disabled]="!addForm.valid">Submit</button>
+        <div *ngIf="added" class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Registered Successfully...!</strong>Please verify your registered email to activate your account.
+        </div>
+        <div *ngIf="exists" class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          Email Already Exists.
+        </div>
+        <h3 class="v">Sign Up</h3>
+      </div>
+      <div>
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+         
+            <div class="form-group">
+              <label for="Full Name" class="h5">Full Name : </label>
+              <input type="text" class="form-control" formControlName="fullName" pattern="[A-Za-z\\s]*"
+                placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label for="Email" class="h5">Email : </label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="Phone" class="h5">Phone Number : </label>
+              <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number"
+                minlength="10" maxlength="10" sixe="10" pattern="[0-9]*" required>
+            </div>
+            <div class="form-group">
+              <label for="User Name" class="h5">User Name : </label>
+              <input type="text" class="form-control" formControlName="userName" placeholder="User Name" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="h5">Password: </label>
+              <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn admin" (click)="addUserMethod()"
+              [disabled]="!addForm.valid">Submit</button>
+        
+        </form>
+      </div>
     </div>
-  </form>
-</div>  
-</div>
-</div>
+  </div>
 </div>

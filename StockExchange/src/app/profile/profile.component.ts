@@ -14,11 +14,9 @@ user:User;
 
   ngOnInit() {
     const c = sessionStorage.getItem('username');
-    console.log(c)
     if (+ c !=null) {
       this.homeService.getUserByUserName(c).subscribe(data=> {
         this.user=data
-        console.log("user:"+this.user.id);
       })
   }
   }

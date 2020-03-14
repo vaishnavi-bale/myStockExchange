@@ -72,8 +72,4 @@ export class AuthService {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("role")
   }
-  // getUserDetails(): string {
-  //   let user = sessionStorage.getItem('usename');
-  //   return user;
-  // }
 }

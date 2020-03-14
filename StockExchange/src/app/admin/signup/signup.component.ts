@@ -10,8 +10,9 @@ import { HomeService} from 'src/app/home.service';
 export class SignupComponent implements OnInit {
 
   addForm: FormGroup;
-
+  added:boolean;
   users:User[];
+  exists:boolean;
 
   constructor(private formBuilder: FormBuilder, private homeService: HomeService) { }
 
@@ -49,14 +50,13 @@ export class SignupComponent implements OnInit {
   addUserMethod(){
     let e = this.addForm.controls.email.value;
     if(this.emailValid(e)){
-      alert('Please verify your registered email to activate your account')
+      this.added=true;
       this.homeService.saveUser(this.addForm.value).subscribe(data => {
-        console.log('User Inserted Successfully');
-        console.log('coming status'+data.registerStatus);
       });
      
     }else{
-      alert('Email Already Exists')
+      this.exists=true;
+      this.addForm.reset();
     }
    
   }

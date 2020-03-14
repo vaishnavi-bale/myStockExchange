@@ -31,8 +31,6 @@ update_user(){
   new_user.active=true;
   this.homeService.updateUser(new_user).subscribe(u => {
     this.activate=true;
-    // alert("User Activated Successfully")
-    // this.router.navigate(['/login'])
   })
 }
 }

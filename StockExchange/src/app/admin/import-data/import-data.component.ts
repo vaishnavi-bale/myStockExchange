@@ -32,8 +32,6 @@ export class ImportDataComponent implements OnInit {
     const uploadSheetData=new FormData();
     uploadSheetData.append("stocksSheet",this.file,this.file.name);
     this.uploadService.uploadStocksSheet(uploadSheetData).subscribe(data => {
-      console.log("Uploaded");
-      alert('Upload Successfull');
     })
   }
 }
